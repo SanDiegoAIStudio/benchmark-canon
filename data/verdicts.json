@@ -88,7 +88,7 @@
       "id": "mmlu-pro",
       "name": "MMLU-Pro",
       "cat": "chat-model",
-      "url": "https://benchlm.ai/benchmarks/mmluPro",
+      "url": "https://github.com/TIGER-AI-Lab/MMLU-Pro",
       "verdict": "caveat",
       "caveat": "Saturated at frontier (4 trackers, 4 different #1s, <2pt spread); legit academic origin, static 2yr set, no gaming found.",
       "round": "main",

@@ -3,6 +3,7 @@ import os
 import re
 import tempfile
 import unittest
+from urllib.parse import urlsplit
 
 from canon_testlib import REPO, read, real_canon, real_rows, run
 
@@ -71,6 +72,19 @@ class RowsTest(unittest.TestCase):
     def test_urls_are_https(self):
         for row in real_rows():
             self.assertTrue(row["url"].startswith("https://"), row["id"])
+
+    def test_no_row_cites_a_discovery_only_aggregator(self):
+        """Rule 1 names the aggregators that are for discovery only, and `cite` prints a row's url,
+        so a row outside the aggregator category must link to its primary source instead."""
+        rule = real_canon()["rules"][0]
+        names = re.search(r"\(([^)]*) class\)", rule).group(1).split(" / ")
+        self.assertEqual(names, ["benchlm", "llm-stats", "localaimaster"])
+        for row in real_rows():
+            if row["cat"] == "aggregator":
+                continue
+            host = urlsplit(row["url"]).hostname
+            for name in names:
+                self.assertNotIn(name, host, row["id"])
 
     def test_fields_present(self):
         for row in real_rows():
