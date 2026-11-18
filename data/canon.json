@@ -1,0 +1,145 @@
+{
+  "asof": "2026-07-17",
+  "note": "The refuter round checked 51 (47 with a caveat, 4 cut); Deep SWE was vetted separately and also carries a caveat",
+  "produced_by": "AI agents (Claude) with web access: one refuter per benchmark, one judge per category",
+  "primaries": [
+    {
+      "cat": "composite",
+      "pick": "Artificial Analysis Intelligence Index",
+      "pick_id": "aa-index",
+      "rule": "Cite with the funding-gap caveat attached, not hidden."
+    },
+    {
+      "cat": "chat-model",
+      "pick": "LiveBench",
+      "pick_id": "livebench",
+      "rule": "Cite livebench.ai directly: never mirrors (stale-aggregator artifacts documented)."
+    },
+    {
+      "cat": "coding",
+      "pick": "Terminal-Bench 2.x",
+      "pick_id": "terminal-bench",
+      "rule": "Always pin the score source (tbench.ai vs Artificial Analysis diverge); never a bare number."
+    },
+    {
+      "cat": "agentic",
+      "pick": "METR Time Horizon",
+      "pick_id": "metr-time-horizon",
+      "rule": "Cite the trend, never one point; 20-35% methodology swings are known-magnitude."
+    },
+    {
+      "cat": "search",
+      "pick": "Deep Research Bench (FutureSearch)",
+      "pick_id": "futuresearch-drb",
+      "rule": "Disclose its Anthropic investor/client tie in the footnote; never bare-cite the name (collision with USTC's bench)."
+    },
+    {
+      "cat": "aggregator",
+      "pick": "Epoch AI Benchmarking Hub / ECI",
+      "pick_id": "epoch-hub",
+      "rule": "Footnote out FrontierMath (COI history) and SWE-bench Verified (kept despite contamination) when citing."
+    },
+    {
+      "cat": "image",
+      "pick": "Arena.ai Image/Video Arenas",
+      "pick_id": "arena-media",
+      "rule": "High-vote entries only; say 'human-voted, gameable', never 'verified' or 'independent'."
+    },
+    {
+      "cat": "video",
+      "pick": "Artificial Analysis Video Arena",
+      "pick_id": "aa-video-arena",
+      "rule": "Exclude anonymous entrants (HappyHorse-class); re-pull the live entrant list at each rebuild."
+    },
+    {
+      "cat": "voice",
+      "pick": "Artificial Analysis Speech Arena",
+      "pick_id": "aa-speech-arena",
+      "rule": "Directional only: top-2 statistically tied and the rival arena disagrees entirely; never a bare #1."
+    },
+    {
+      "cat": "docs",
+      "pick": "OCRBench v2",
+      "pick_id": "ocrbench-v2",
+      "rule": "Disclose the self-reported-score caveat; ByteDance co-authorship disclosed when citing ByteDance-adjacent tools."
+    },
+    {
+      "cat": "safety",
+      "pick": "AgentHarm",
+      "pick_id": "agentharm",
+      "rule": "Stamp 'judge/content frozen 2024'; 2026 frontier discrimination unconfirmed."
+    }
+  ],
+  "rules": [
+    "Primary sources are the citation of record; SEO aggregators (benchlm / llm-stats / localaimaster class) are discovery-only.",
+    "Composites beat single benches, but know the components: a rotten ingredient (FrontierMath, SWE-bench Verified in ECI) taints the blend silently.",
+    "NAME THE HARNESS on any agent or coding score: on Terminal-Bench the same model scored 58% in one harness and 75 to 82% in others (Theo Browne, t3.gg, \"Did Claude really get dumber again?\", 2026-04-20, https://www.youtube.com/watch?v=KFisvc-AMII).",
+    "Adoption is not quality: OpenRouter volume is telemetry; AA's #1 ranks #7 by usage.",
+    "A vendor's own model leading the vendor's own benchmark is never evidence (Google/FACTS+SimpleQA-Verified, OpenAI/GDPval, MinerU/OmniDocBench, NVIDIA/Open-ASR).",
+    "Arenas: high-vote, named entrants only; call them 'human-voted, gameable', never 'independent'.",
+    "Stamp every citation 'as of <date>'; frozen boards (Aider Oct 2025, LiveCodeBench Apr 2025, VBench Apr 2026, HAL Jul 2026) are archival, not current.",
+    "Never a bare #1: frontier gaps sit inside statistical noise on nearly every board (top-10 within ~20 Elo on Arena; 4 trackers, 4 different MMLU-Pro leaders).",
+    "Disclose the named caveat every time a canon benchmark is cited: the caveat IS the trust layer.",
+    "Saturated benchmarks demote to floor-gates (Cybench, MMLU-Pro, GPQA): 'passes the floor' is meaningful, ranking is not.",
+    "Re-vet cadence: coding quarterly at minimum (the succession pattern: Verified -> Pro -> Deep SWE each re-developed the same failure), everything else semi-annually, any benchmark on a funding/ownership change immediately."
+  ],
+  "voids": [
+    "SMB SaaS tools: NO independent capability benchmark exists (Salesforce grades itself; G2 bought Capterra + Software Advice + GetApp Feb 2026: one pay-to-play owner).",
+    "Run-to-run reliability: nobody measures consistency across repeated runs: the thing an operator experiences as trustworthy. tau2-bench's pass^k is the lone partial exception.",
+    "Human-oversight cost: capability-per-dollar exists; check-its-work time is measured nowhere. Princeton HAL's cost axis was closest and is now frozen.",
+    "AI-search accuracy: no credible independent study since Columbia Tow Center (Mar 2025, all-eight-bad). Every circulating percentage is SEO/vendor content.",
+    "Voice-cloning fidelity: no neutral benchmark isolates clone similarity; every '#1 at cloning' claim is vendor marketing.",
+    "Safety currency: no continuously-updated public safety leaderboard exists the way capability ones do: 'is it safe' is structurally less visible to a buyer than 'is it smart'."
+  ],
+  "curators": [
+    {
+      "who": "Artificial Analysis",
+      "note": "most cross-cited composite; funding undisclosed: caveat carried on every cite"
+    },
+    {
+      "who": "Epoch AI",
+      "note": "most transparent tiering; FrontierMath COI history; slow to prune its own composite"
+    },
+    {
+      "who": "METR",
+      "note": "predeployment access to 4 labs; funding undisclosed"
+    },
+    {
+      "who": "ARC Prize Foundation",
+      "note": "discloses lab donors: the disclosure practice is the differentiator"
+    },
+    {
+      "who": "Theo Browne (t3.gg)",
+      "note": "usage-grounded commentary; the name-the-harness rule follows his Terminal-Bench comparison"
+    },
+    {
+      "who": "AI Explained / SimpleBench",
+      "note": "rigor-tier YouTuber; own bench near-saturated (n=9 baseline caveat)"
+    },
+    {
+      "who": "Zvi Mowshowitz · Nathan Lambert · Simon Willison",
+      "note": "independent practitioner cross-checks; no lab affiliation"
+    },
+    {
+      "who": "Vals AI",
+      "note": "cleanest independence profile among domain-specific evaluators (legal/tax/finance)"
+    }
+  ],
+  "labels": {
+    "composite": "Composite indices",
+    "chat-model": "Chat / reasoning models",
+    "coding": "Coding + software agents",
+    "agentic": "Agentic / computer-use",
+    "search": "Search / research engines",
+    "image": "Image generation",
+    "video": "Video generation",
+    "voice": "Voice (TTS / STT)",
+    "docs": "Documents / OCR",
+    "safety": "Safety / red-teaming",
+    "aggregator": "Aggregators"
+  },
+  "revet_months": {
+    "coding": 3,
+    "default": 6
+  }
+}

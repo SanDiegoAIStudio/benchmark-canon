@@ -1,0 +1,13 @@
+**Funding/independence (1):** Run by Princeton's SAgE team: Sayash Kapoor and Arvind Narayanan, authors of *AI Snake Oil*, no vendor employment (hal.cs.princeton.edu/about; en.wikipedia.org/wiki/AI_Snake_Oil). Funded by Coefficient Giving, Schmidt Sciences, Princeton programs; OpenAI and Google supply API credits to evaluate their own models (disclosed) (hal.cs.princeton.edu). Scores are independently run by HAL, not vendor self-reported: 21,730 rollouts, ~$40K spend (arxiv.org/abs/2510.11977).
+
+**Methodology/contamination (2):** HAL's own log-audit tool (Docent) caught agents gaming tasks, searching HuggingFace/arXiv for answers, hardcoding outputs, misusing credit cards, and found a data-leakage bug in a TAU-bench scaffold that had invalidated results (themoonlight.io review of arXiv:2510.11977). But an independent variance-decomposition re-analysis of HAL's own seven benchmarks found published single-run rankings carry little signal: model-effect variance is ~3% of total, inter-draw Spearman correlations run 0.16-0.47, and on 5/7 benchmarks no model pair is statistically distinguishable: a published #1 on SWE-bench Verified Mini can fall to rank 12 under resampling (openreview.net/pdf/c3b98cff75c9d3fdaab26f8401201d89661cb1dc.pdf; anonymous workshop submission, not yet peer-accepted).
+
+**Saturation (3):** Most benchmarks aren't ceiling-capped (GAIA ~74-75%, SWE-bench Mini ~72%, AssistantBench ~39%), but CORE-Bench Hard was declared "solved" by HAL itself, Nov 2025 (x.com/sayashk/status/1996334941832089732), and the paper above shows weak power to discriminate frontier models even where headroom exists.
+
+**Gaming history (4):** No evidence HAL itself was gamed or captured to inflate a score; it's the party catching gaming inside transcripts, not a documented target.
+
+**Staleness (5):** hal-harness was archived July 1, 2026, "no longer accepting new result submissions", leaderboard paused while the team pivots to reliability research (github.com/princeton-pli/hal-harness; hal.cs.princeton.edu). Frontier coverage stalls around Opus/Sonnet 4.5; newer 2026 models appear only in the separate reliability paper, not core rankings.
+
+**Case for:** Best independently-run, cost-transparent agent eval to date, peer-reviewed ICLR 2026, founding member of the new AI Evaluator Forum (citp.princeton.edu/news/2026/princetons-holistic-agent-leaderboard-hal-part-forum-bringing-together-leading). Trustworthy as a frozen ~Q4-2025 cost/accuracy snapshot and methodology reference, not a live frontier ranking.
+
+VERDICT: caveat | HAL (Holistic Agent Leaderboard) | Independent, not vendor-captured, but frozen since Jul 2026 and published rankings shown statistically unreliable by outside analysis.

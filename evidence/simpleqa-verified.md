@@ -1,0 +1,13 @@
+**Vendor capture (severe).** Creator, host, and top scorer are the same company. DeepMind/Google Research built it via a Kaggle partnership (Kaggle+GoogleDeepMind+GoogleResearch announcement: https://x.com/kaggle/status/1965795051239260528); it lives at kaggle.com/benchmarks/deepmind/simpleqa-verified; the dataset sits under the "google" HF org (https://huggingface.co/datasets/google/simpleqa-verified/blob/main/README.md); Kaggle has been a Google subsidiary since 2017 (https://techcrunch.com/2017/03/07/google-is-acquiring-data-science-community-kaggle/). Independent tracker Epoch AI confirms "Google maintains the official leaderboard" (https://epoch.ai/benchmarks/simple-qa-verified). The launch paper's headline: Gemini 2.5 Pro topped the chart at launch, "outperforming other frontier models, including GPT-5" (https://arxiv.org/abs/2509.07968). By mid-2026 Google's Gemini 3.1 Pro again leads. Mitigant: grading uses GPT-4.1 (OpenAI, not Google) as autorater, not self-judging (same HF source), but that judge is frozen at 2025-era capability while scoring 2026 models.
+
+**Contamination.** Epoch AI names a specific case: "We suspect that Qwen3-Max-Instruct is contaminated on this dataset" (https://epoch.ai/benchmarks/simple-qa-verified): the rival model that briefly held top spot before Gemini 3 Pro overtook it.
+
+**Saturation.** Top score climbed from 55.6 F1 (Sept 2025 launch) to 72.1% (Gemini 3 Pro) to higher still (Gemini 3.1 Pro, mid-2026): near-20-point compression in under a year, though a real gap over mid-tier models (~45-55%) persists today.
+
+**Staleness / ecosystem integrity.** The "DeepSeek V4 Pro Max 57.9% vs Gemini 2.5 Pro 53.0%" split cited as today's leader dispute isn't about Verified at all: llm-stats.com and benchlm.ai both confirm those figures come from the ORIGINAL 2024 OpenAI SimpleQA, routinely conflated with "Verified" by aggregators (https://llm-stats.com/benchmarks/simpleqa, https://benchlm.ai/benchmarks/simpleQa).
+
+**Gaming history.** No public scandal beyond the Qwen3-Max contamination flag above; no independent audit of Google's self-reported launch numbers was found.
+
+**Case FOR.** The re-curation is methodologically real (de-dup, topic-rebalance, source reconciliation), the leaderboard is genuinely live, and Epoch AI independently re-runs it rather than trusting Google's self-reported table: real external auditability original SimpleQA lacked. Usable only as a directional, tools-off factuality signal, never as a vendor-neutral cross-lab ranking given who owns the scoreboard.
+
+VERDICT: caveat | SimpleQA Verified | Google creates, hosts, and currently tops its own leaderboard; treat as directional signal, not neutral ranking.

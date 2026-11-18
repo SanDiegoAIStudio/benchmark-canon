@@ -1,0 +1,13 @@
+**Vendor capture / ownership:** NOT actually unclear: operator is ZeroEval Inc. (YC S25), founders Sebastian Crossa and Jonathan Chávez, publicly listed at ycombinator.com/companies/llm-stats and zeroeval.com. But zeroeval.com states it is "Backed by Y Combinator, Hugging Face, Harvard Medical, Google, and Datadog": if Google is a financial backer while Gemini models are simultaneously scored on llm-stats.com, that's an undisclosed conflict. llm-stats.com/about-us discloses zero funding/COI info despite criticizing rivals for benchmarks "chosen by the people selling the models."
+
+**Methodology:** Documented and versioned at llm-stats.com/methodology/llm-stats-score: axis-weighted (reasoning/coding 25% each, tools 20%, knowledge 15%, context 10%, vision 5%), reproducibility-gated (unreplicated self-reported numbers excluded from composite), changelogged. Above-average written rigor for an aggregator; no independent third-party audit found.
+
+**Saturation:** Front-page blended composite still discriminates, top three sit at 54.0/51.0/49.9 of 100 (GPT-5.6 Sol, Claude Fable 5, Claude Opus 4.8; llm-stats.com/), real separation, not ceiling-clustered.
+
+**Gaming history:** No third-party (Reddit/press/X) documentation of manipulation surfaced in this pass: thin evidence, unconfirmed rather than clean.
+
+**Staleness/liveness, RE-VERIFIED TODAY:** llm-stats.com/benchmarks/livebench currently shows o3-mini (OpenAI) as #1 at 0.846, ahead of GPT-5.5, GPT-5.4, Gemini 3.1 Pro, and Claude Fable 5. o3-mini released Jan 30, 2025 (llm-stats.com/models/o3-mini), 17+ months stale. This is the exact artifact flagged as a prior signal, and it's still live now, directly contradicting the site's own claim that rankings "refresh continuously" and "revalidate hourly." Could not determine whether this is llm-stats' own pipeline bug or an unquestioned mirror of a stale upstream LiveBench.ai snapshot (that page didn't render for direct comparison): either way it is currently wrong on-site.
+
+**FOR case:** Ownership is real, named, and traceable, not anonymous, contrary to the prior signal. The front-page blended composite is internally sane and still separates frontier models meaningfully. Usable ONLY as a rough directional cross-check via that top-line score: never cite or link individual per-benchmark drilldown pages (LiveBench specifically confirmed broken today), and flag the Google-backer/Google-model overlap as an open disclosure gap needing a direct response from ZeroEval before upgrading.
+
+VERDICT: caveat | llm-stats.com | Owner traceable (ZeroEval/YC S25); blended score sane but LiveBench subpage confirmed stale (o3-mini #1); undisclosed Google-backer conflict.

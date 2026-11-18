@@ -1,0 +1,13 @@
+**1. Vendor capture.** Maintained solely by ServiceNow (https://github.com/ServiceNow/webarena-verified), a vendor selling "Now Assist" AI agents nearing $1B ACV (https://www.servicenow.com/products/ai-agents.html) and running its own agent-benchmark portfolio (WorkArena, AgentLab, BrowserGym: all ServiceNow/GitHub). Single named maintainer (Am1n3e / Amine El hattami, per GitHub commit signatures), no conflict-of-interest disclosure found. Original CMU authors (Zhou, Neubig) appear only in acknowledgments, not as co-stewards: this is a vendor fork, not an independently governed re-release.
+
+**2. Methodology / contamination.** The real fix, deterministic scoring, dropping LLM-judge and substring matching, backend state checks (https://servicenow.github.io/webarena-verified/), targets two of BenchJack's three WebArena flaw classes (weak string-match, judge-prompt-injection). But BenchJack (Berkeley RDI: Wang, Li, Mang, Cheung, Sen, Song; arXiv 2605.12673, submitted 2026-05-12) tested only the *original* WebArena, not this fork: no independent retest of Verified exists. The repo still ships the raw pre-audit dataset (`assets/dataset/test.raw.json`) "for reference" per its own README (https://github.com/ServiceNow/webarena-verified): the same gold-answer-in-environment condition the file:// exploit abused; a better comparator doesn't close that hole if the answer file stays reachable. GitHub API confirms no commit since 2026-03-08, no release since v1.2.3 (2026-02-07): silence through and past BenchJack's May disclosure.
+
+**3. Saturation.** Unaudited WebArena sits ~65-74% top-agent (https://benchlm.ai/benchmarks/webArena, https://leaderboard.steel.dev/leaderboards/webarena/) vs. ~89% human: still discriminates. But that's not Verified's data: WebArena-Verified's own tracker shows "0 sourced rows... one provider-reported result" (https://benchlm.ai/benchmarks/webArenaVerified): too little adoption to judge saturation on the audited version itself.
+
+**4. Gaming history.** BenchJack hit ~98-100% hack rate on WebArena via file:// gold-answer reads plus DOM/judge-prompt injection, solving zero real tasks (arXiv 2605.12673): recent, credible, unrebutted.
+
+**5. Liveness.** webarena.dev today is a CMU hub (WebArena, WebArena-Infinity, VisualWebArena, TheAgentCompany) that does not link WebArena-Verified at all: the URL this row cites doesn't surface this release.
+
+**FOR:** Genuine engineering, Apache-2.0, PGP-signed commits, inspectable: legitimate for a team that runs it themselves and verifies sandboxing directly. Not yet trustworthy as a citable leaderboard number.
+
+VERDICT: caveat | WebArena-Verified | ServiceNow-run; BenchJack never retested it; raw gold-answer file still shipped; near-zero adoption; unverified since Mar 2026.

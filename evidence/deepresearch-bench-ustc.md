@@ -1,0 +1,15 @@
+DeepResearch Bench (USTC + Metastone Technology, Beijing) confirmed: 100 PhD-level tasks (50 EN/50 ZH), RACE+FACT scoring: [deepresearch-bench.github.io](https://deepresearch-bench.github.io/), [github.com/Ayanami0730/deep_research_bench](https://github.com/Ayanami0730/deep_research_bench). DRB-II ([arXiv:2601.08536](https://arxiv.org/abs/2601.08536), filed Jan 13 2026, publicized early Feb 2026) adds 132 tasks / 9,430 binary rubrics from real expert reports; visible DRB-II contacts (2 of 6 listed authors, @mail.ustc.edu.cn) are USTC: no Metastone affiliation surfaced ([github.com/imlrz/DeepResearch-Bench-II](https://github.com/imlrz/DeepResearch-Bench-II)).
+
+**1) Vendor capture**: Metastone Technology is a Beijing AI-infrastructure/compute firm ("元石/Yuanshi" brand family, [metastonecorp.com/aboutus](https://metastonecorp.com/aboutus)) whose GitHub/HF org (MetaStone-AI / "Beijing Yuanshi Technology") separately ships competing reasoning LLMs (XBai o4, MetaStone-S1), a for-profit industry co-creator of DRB-I, not pure academia. Corporate-identity overlap is name-consistent but not airtight-confirmed. No evidence Metastone's own models are scored on the leaderboard.
+
+**2) Methodology, real self-preference risk**: DRB-I's official judge was Gemini-2.5-Pro while "Gemini-2.5-Pro Deep Research" simultaneously topped its own RACE leaderboard (48.88), judge and contestant, same family. Authors' GPT-5 cross-check ("highly consistent") is self-reported, not independently audited. As of May 11 2026 the sole official evaluator moved to GPT-5.5: same structural risk, now OpenAI-side, since OpenAI Deep Research is also scored.
+
+**3) Saturation**: Not saturated: DRB-II: "even the strongest models satisfy fewer than 50% of the rubrics," current as of Feb 2026 ([arxiv.org/abs/2601.08536](https://arxiv.org/abs/2601.08536)).
+
+**4) Gaming history**: No documented exploit specific to this benchmark surfaced; free-form-report + LLM-judge format sidesteps test-harness exploits hitting SWE-bench/Terminal-Bench, but judge-gaming (citation-stuffing for rubric hits) is untested territory.
+
+**5) Naming collision: active hazard**: FutureSearch's same-named "Deep Research Bench" ([futuresearch.ai/deep-research-bench](https://futuresearch.ai/deep-research-bench/)) is a different benchmark (91 fixed-answer tasks, ReAct/RetroSearch). Epoch AI's "DeepResearchBench" page actually tracks FutureSearch's version, not USTC's ([epoch.ai/benchmarks/deepresearchbench](https://epoch.ai/benchmarks/deepresearchbench)): third parties already conflate the two.
+
+**FOR**: Genuine PhD-level dual-language task design; DRB-II's expert-report-grounded rubrics (400+ human-review hours) directly answer prior LLM-judge critiques; open-source, actively maintained (evaluator migration mid-2026); demonstrably unsaturated at the frontier.
+
+VERDICT: caveat | DeepResearch Bench (USTC) | Active & unsaturated, but judge=contestant self-preference (Gemini→now GPT-5.5) and rampant collision with FutureSearch's same-named bench

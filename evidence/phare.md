@@ -1,0 +1,13 @@
+**Vendor capture / COI**: Giskard is a commercial AI-testing vendor selling paid red-teaming audits with a "refund if no vulnerabilities found" pitch: alarming hallucination/jailbreak findings double as lead-gen for that product (https://www.giskard.ai/products/continuous-red-teaming). Funding is government-heavy: Bpifrance + EU EIC Accelerator grants, VC (Elaia, Bessemer), angels including Mistral co-founder Charles Gorintin (https://www.giskard.ai/about). Mistral is also a named partner in a separate Bpifrance-funded Giskard evaluation consortium, yet Mistral models don't crack the top 20 of 67 tracked (https://phare.giskard.ai/): undercuts favoritism-in-practice. Google DeepMind is a "non-exclusive research partnership" (https://www.giskard.ai/knowledge/giskard-announces-phare-a-new-llm-evaluation-benchmark), and DeepMind's own Gemini lands mid-table (#12/#18), also arguing against capture.
+
+**Methodology integrity**: LLM-as-judge, majority vote of three. Launch paper used GPT-4o/Gemini-1.5-Pro/Claude-3.5-Sonnet (https://arxiv.org/html/2505.11365v1); current GitHub README lists GPT-5-mini/Gemini-2.5-Flash-Lite/Claude-3.5-Haiku (https://github.com/Giskard-AI/phare): smaller/cheaper checkpoints now judge frontier models. One judge seat is always Anthropic-family while Claude occupies 7 of the top 11 overall-safety slots (https://phare.giskard.ai/): a real self-family-judge overlap, only partly offset by the other two judges being rival vendors. All paper authors are Giskard staff; no outside academic co-author. Private hold-out + partial public release aids contamination resistance but is self-attested, unaudited.
+
+**Saturation**: Not saturated: rank1-5 spread 6.3pts, rank1-20 spread 12.7pts across 67 models (https://phare.giskard.ai/); still discriminates at the frontier.
+
+**Gaming history**: None found; the "Show HN" thread (https://news.ycombinator.com/item?id=44049913) is the launch announcement, not a callout. Benchmark is ~17 months old: too young for a scandal cycle either way.
+
+**Staleness**: Live: 13 models added, 71 total, dated July 6-9 2026 (https://www.giskard.ai/knowledge/phare-llm-benchmark-update-13-new-models-and-a-widening-split-in-ai-safety-choices), ~10 days before today.
+
+**FOR**: a directional, cross-vendor, government-funded (not pay-to-play), actively-updated signal on relative hallucination/bias/jailbreak resistance across EN/FR/ES that still discriminates at the frontier: usable as one input, not sole ground truth, given self-authored methodology and the vendor's own paid-audit motive.
+
+VERDICT: caveat | Phare LLM Benchmark | Self-authored methodology + Anthropic-family judge seat + paid-audit vendor motive; still discriminates, govt-funded, actively updated.

@@ -1,0 +1,13 @@
+**Vendor capture.** OpenAI funded FrontierMath's creation and held ongoing access to problem statements and solutions for ~300 of the original 350 problems (a 50-problem holdout kept solutions back), undisclosed to contributing mathematicians until OpenAI revealed it alongside the o3 launch, Dec 20 2024: several said they might not have contributed had they known (techcrunch.com/2025/01/19/ai-benchmarking-organization-criticized-for-waiting-to-disclose-funding-from-openai/, epoch.ai/latest/openai-and-frontiermath). Tier 4, the hardest tier, the one still showing real separation between models, was itself commissioned by OpenAI too (epoch.ai/benchmarks/frontiermath-tier-4).
+
+**Gaming, documented.** OpenAI announced o3 solved >25% of FrontierMath at its Dec 2024 launch using privileged in-house access; Epoch's own independent re-run months later scored o3 near 10% (techrepublic.com/article/news-openai-generative-ai-models-frontiermath-score/). Self-reported first-party numbers on this benchmark have a proven history of running ~2.5x hot vs. independent verification.
+
+**Methodology.** Grading is automated exact-match/SymPy, not LLM-judged, limiting one attack surface, but a 2026 audit (using GPT-5.5 and Opus 4.7, both vendors under test, to flag candidates) found fatal errors in 42% of the original 350 problems; v2 shipped 2026-06-12 at 338 corrected problems (epoch.ai/benchmarks/frontiermath-tiers-1-3-v2, x.com/EpochAIResearch/status/2065488154086568445). Every number published before that date rested on a broken answer key for ~18 months.
+
+**Saturation.** Tiers 1-3 are compressing near ceiling: GPT-5.5(xhigh) 85% at v2 launch, Fable 5 reported 87% a day later. Tier 4 still separates: Fable 5 ~88% vs GPT-5.5 ~75-76% (the-decoder.com/claude-fable-5-outpaces-gpt-5-5-by-13-points-on-frontiermaths-toughest-problems/): real discriminating signal now lives mainly in Tier 4.
+
+**Staleness.** Actively maintained (v2, 2026-06-12). The cited "GPT-5.5 Pro 87.7% vs Fable 5 87.0%" split could not be corroborated: primary-source and press numbers above show Fable 5 leading, not trailing, on Tiers 1-3; treat that exact figure as unconfirmed pending a live-dashboard check.
+
+**FOR:** novel unpublished problems resist naive contamination, grading is deterministic not LLM-judged, and Tier 4 still cleanly separates frontier models: real value as a directional signal, but only via Epoch's own independently-run scores, never vendor self-reports, and only post-v2 data.
+
+VERDICT: caveat | FrontierMath | OpenAI funded+saw problems undisclosed till launch; 42% error rate fixed only June 2026; self-reported scores proven inflated 2.5x.

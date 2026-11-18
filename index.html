@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>The Benchmark Canon</title>
+<style>
+:root{color-scheme:light dark;--bg:#fbfaf7;--fg:#1d1c1a;--muted:#5c5a55;--rule:#d9d5cc;--card:#f2efe8;--link:#0b5cad;--canon:#1b6b3a;--caveat:#8a5a00;--cut:#a3261b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141412;--fg:#ece9e2;--muted:#a8a49b;--rule:#37352f;--card:#1e1d1a;--link:#7db4f0;--canon:#6fcf8e;--caveat:#e8b04a;--cut:#f08a80}}
+:root[data-theme="dark"]{--bg:#141412;--fg:#ece9e2;--muted:#a8a49b;--rule:#37352f;--card:#1e1d1a;--link:#7db4f0;--canon:#6fcf8e;--caveat:#e8b04a;--cut:#f08a80}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:72rem;margin:0 auto;padding:24px 16px 56px}
+h1{font-size:1.9rem;line-height:1.2;margin:0 0 .4rem}
+h2{font-size:1.35rem;margin:2.4rem 0 .6rem;padding-top:.6rem;border-top:1px solid var(--rule)}
+h3{font-size:1.1rem;margin:1.6rem 0 .5rem}
+h4,h5{font-size:1rem;margin:1rem 0 .3rem}
+a{color:var(--link)}
+p,li{overflow-wrap:anywhere}
+.lead{color:var(--muted);margin:.2rem 0}
+.key{list-style:none;padding:0;margin:1rem 0}
+.key li{margin:.2rem 0}
+.scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.92rem}
+th,td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--rule)}
+th{background:var(--card);font-weight:600}
+.v{font-weight:600}
+.v-canon{color:var(--canon)}
+.v-caveat{color:var(--caveat)}
+.v-cut{color:var(--cut)}
+details{margin:.8rem 0;border:1px solid var(--rule);border-radius:6px;background:var(--card)}
+summary{cursor:pointer;padding:.55rem .8rem;font-weight:600}
+details .memo{padding:0 .9rem .8rem}
+ol,ul{padding-left:1.3rem}
+@media (max-width:40rem){main{padding:16px}h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<main>
+<h1>The Benchmark Canon</h1>
+<p class="lead">Checked 2026-07-17.</p>
+<p class="lead">The refuter round checked 51 (47 with a caveat, 4 cut); Deep SWE was vetted separately and also carries a caveat</p>
+<ul class="key">
+<li><span class="v v-canon">canon</span>: cite plain. No benchmark has earned it.</li>
+<li><span class="v v-caveat">caveat</span>: cite with the caveat.</li>
+<li><span class="v v-cut">cut</span>: do not cite.</li>
+</ul>
+<p class="lead">Produced by AI agents (Claude) with web access: one refuter per benchmark, one judge per category.</p>
+<h2>The eleven primaries</h2>
+<div class="scroll"><table>
+<thead><tr><th>Category</th><th>Primary</th><th>Rule</th></tr></thead>
+<tbody>
+<tr><td>Composite indices</td><td><a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index">Artificial Analysis Intelligence Index</a></td><td>Cite with the funding-gap caveat attached, not hidden.</td></tr>
+<tr><td>Chat / reasoning models</td><td><a href="https://livebench.ai/">LiveBench</a></td><td>Cite livebench.ai directly: never mirrors (stale-aggregator artifacts documented).</td></tr>
+<tr><td>Coding + software agents</td><td><a href="https://www.tbench.ai/">Terminal-Bench 2.x</a></td><td>Always pin the score source (tbench.ai vs Artificial Analysis diverge); never a bare number.</td></tr>
+<tr><td>Agentic / computer-use</td><td><a href="https://metr.org/time-horizons/">METR Time Horizon</a></td><td>Cite the trend, never one point; 20-35% methodology swings are known-magnitude.</td></tr>
+<tr><td>Search / research engines</td><td><a href="https://futuresearch.ai/deep-research-bench/">Deep Research Bench (FutureSearch)</a></td><td>Disclose its Anthropic investor/client tie in the footnote; never bare-cite the name (collision with USTC&#x27;s bench).</td></tr>
+<tr><td>Aggregators</td><td><a href="https://epoch.ai/benchmarks">Epoch AI Benchmarking Hub / ECI</a></td><td>Footnote out FrontierMath (COI history) and SWE-bench Verified (kept despite contamination) when citing.</td></tr>
+<tr><td>Image generation</td><td><a href="https://arena.ai/leaderboard/text-to-image">Arena.ai Image/Video Arenas</a></td><td>High-vote entries only; say &#x27;human-voted, gameable&#x27;, never &#x27;verified&#x27; or &#x27;independent&#x27;.</td></tr>
+<tr><td>Video generation</td><td><a href="https://artificialanalysis.ai/video/arena">Artificial Analysis Video Arena</a></td><td>Exclude anonymous entrants (HappyHorse-class); re-pull the live entrant list at each rebuild.</td></tr>
+<tr><td>Voice (TTS / STT)</td><td><a href="https://artificialanalysis.ai/text-to-speech/arena">Artificial Analysis Speech Arena</a></td><td>Directional only: top-2 statistically tied and the rival arena disagrees entirely; never a bare #1.</td></tr>
+<tr><td>Documents / OCR</td><td><a href="https://99franklin.github.io/ocrbench_v2/">OCRBench v2</a></td><td>Disclose the self-reported-score caveat; ByteDance co-authorship disclosed when citing ByteDance-adjacent tools.</td></tr>
+<tr><td>Safety / red-teaming</td><td><a href="https://huggingface.co/datasets/ai-safety-institute/AgentHarm">AgentHarm</a></td><td>Stamp &#x27;judge/content frozen 2024&#x27;; 2026 frontier discrimination unconfirmed.</td></tr>
+</tbody></table></div>
+<h2>The ledger, by category</h2>
+<h3 id="cat-composite">Composite indices</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-aa-index"><td><a href="https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index">Artificial Analysis Intelligence Index</a></td><td><span class="v v-caveat">caveat</span></td><td>Live, transparent, anti-gaming methodology; but funding/ownership stays off-site and payer/rated conflict undisclosed formally.</td><td><a href="evidence/aa-index.md">evidence</a></td></tr>
+<tr id="row-gdpval"><td><a href="https://openai.com/index/gdpval/">GDPval / GDPval-AA v2</a></td><td><span class="v v-caveat">caveat</span></td><td>OpenAI owns/authors the task corpus and self-judges via GPT-5.5; ~30% grading noise; top-2 gap is statistical noise.</td><td><a href="evidence/gdpval.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Composite indices</summary>
+<div class="memo">
+<p><strong>1. Ranked KEEP list (canon + caveat)</strong></p>
+<ol><li><strong>Artificial Analysis Intelligence Index</strong>: CAVEAT. Trust it for a live, cross-model snapshot blending 9 established sub-benchmarks under transparent, anti-gaming methodology, and as the field&#x27;s most cross-cited composite (Lambert, TheSequence, BenchLM, LM Council defer to it). Don&#x27;t trust it as provenance-clean: funding/ownership stay undisclosed, so a payer/rated conflict is flagged, not ruled out.</li><li><strong>GDPval / GDPval-AA v2</strong>: CAVEAT. Trust it for rough directional signal on professional-task completion. Don&#x27;t trust it to rank models: OpenAI owns the task corpus and self-judges via its own GPT-5.5; ~30% grading noise puts the top-2 gap inside the noise band, so it can&#x27;t answer &quot;who&#x27;s best.&quot;</li></ol>
+<p><strong>2. PRIMARY: Artificial Analysis Intelligence Index.</strong> Broadest independent cross-citation, live/updated, transparent blend methodology, named &quot;hardest to game&quot; in the cross-curator consensus set: versus GDPval&#x27;s single-vendor self-grading and noise level that specifically defeats the &quot;declare a winner&quot; job a page that cites it needs. Cite it with the funding-gap caveat attached, not hidden.</p>
+<p><strong>3. Flags</strong></p>
+<ul><li>GDPval-AA v2 is one of AA&#x27;s 9 blended ingredients: citing &quot;AA Index&quot; dilutes GDPval&#x27;s grading-noise problem, doesn&#x27;t erase it.</li><li>Epoch Capabilities Index (7-bench composite, Tier-1 cross-cited, FrontierMath funding-COI already *proven* not just suspected) never reached this refuter batch: route it through before calling composite canon closed.</li><li>No refuter has independently audited AA&#x27;s internal weighting math; composite status isn&#x27;t the same as audited status.</li></ul>
+<p>PRIMARY: Artificial Analysis Intelligence Index</p>
+</div></details>
+<h3 id="cat-chat-model">Chat / reasoning models</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-arc-agi-2"><td><a href="https://arcprize.org/leaderboard">ARC-AGI-2</a></td><td><span class="v v-caveat">caveat</span></td><td>Well-governed but semi-private track admits overfitting risk; chat-model frontier already exceeds human baseline (92.5% vs ~60%).</td><td><a href="evidence/arc-agi-2.md">evidence</a></td></tr>
+<tr id="row-arc-agi-3"><td><a href="https://arcprize.org/competitions/2026/arc-agi-3">ARC-AGI-3</a></td><td><span class="v v-caveat">caveat</span></td><td>Live and unsaturated but founder-run for-profit is top funder; predecessor contamination history; tests agentic play not chat model output.</td><td><a href="evidence/arc-agi-3.md">evidence</a></td></tr>
+<tr id="row-arena-text"><td><a href="https://arena.ai/leaderboard/text">Arena (LMArena) Text Leaderboard</a></td><td><span class="v v-caveat">caveat</span></td><td>Confirmed gaming precedent + VC conflicts + frontier saturation; live/current/largest-sample: use for broad tiering, not top-10 rank</td><td><a href="evidence/arena-text.md">evidence</a></td></tr>
+<tr id="row-facts-suite"><td><a href="https://www.kaggle.com/benchmarks/google/facts">FACTS Benchmark Suite</a></td><td><span class="v v-caveat">caveat</span></td><td>Google builds/hosts/self-judges via owned Kaggle; Gemini judges 2/4 legs; usable as relative signal only, not proof of superiority</td><td><a href="evidence/facts-suite.md">evidence</a></td></tr>
+<tr id="row-frontiermath"><td><a href="https://epoch.ai/frontiermath">FrontierMath</a></td><td><span class="v v-caveat">caveat</span></td><td>OpenAI funded+saw problems undisclosed till launch; 42% error rate fixed only June 2026; self-reported scores proven inflated 2.5x.</td><td><a href="evidence/frontiermath.md">evidence</a></td></tr>
+<tr id="row-gpqa-diamond"><td><a href="https://artificialanalysis.ai/evaluations/gpqa-diamond">GPQA Diamond</a></td><td><span class="v v-caveat">caveat</span></td><td>Saturated at frontier (93-95%, cross-tracker noise ≈ model spread); creators&#x27; own group says top scores partly reflect predicting flawed answers.</td><td><a href="evidence/gpqa-diamond.md">evidence</a></td></tr>
+<tr id="row-hle"><td><a href="https://agi.safe.ai/">Humanity&#x27;s Last Exam</a></td><td><span class="v v-caveat">caveat</span></td><td>Meta owns 49% of Scale/HLE; Meta&#x27;s model ranks on it; ~29% bio/chem error rate confirmed: still discriminates, disclose ties.</td><td><a href="evidence/hle.md">evidence</a></td></tr>
+<tr id="row-livebench"><td><a href="https://livebench.ai/">LiveBench</a></td><td><span class="v v-caveat">caveat</span></td><td>Live, objective, no-LLM-judge scoring at the source; single-vendor funder, no COI disclosure; cite livebench.ai directly, not stale mirrors.</td><td><a href="evidence/livebench.md">evidence</a></td></tr>
+<tr id="row-mmlu-pro"><td><a href="https://benchlm.ai/benchmarks/mmluPro">MMLU-Pro</a></td><td><span class="v v-caveat">caveat</span></td><td>Saturated at frontier (4 trackers, 4 different #1s, &lt;2pt spread); legit academic origin, static 2yr set, no gaming found.</td><td><a href="evidence/mmlu-pro.md">evidence</a></td></tr>
+<tr id="row-seal-showdown"><td><a href="https://labs.scale.com/leaderboard">Scale AI SEAL / SEAL Showdown</a></td><td><span class="v v-caveat">caveat</span></td><td>Meta owns 49%+its Chief AI Officer sits on Scale&#x27;s board scoring his own lab&#x27;s models; sound stats, no confirmed rigging yet.</td><td><a href="evidence/seal-showdown.md">evidence</a></td></tr>
+<tr id="row-simplebench"><td><a href="https://simple-bench.com/">SimpleBench (AI Explained)</a></td><td><span class="v v-caveat">caveat</span></td><td>Live, dual-mirrored, but near-saturated (81.9 vs 83.7 human), n=9 baseline, undisclosed grading method, prompting-sensitive.</td><td><a href="evidence/simplebench.md">evidence</a></td></tr>
+<tr id="row-simpleqa-verified"><td><a href="https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified">SimpleQA Verified</a></td><td><span class="v v-caveat">caveat</span></td><td>Google creates, hosts, and currently tops its own leaderboard; treat as directional signal, not neutral ranking.</td><td><a href="evidence/simpleqa-verified.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Chat / reasoning models</summary>
+<div class="memo">
+<h4>KEEP (ranked, trust-first)</h4>
+<ol><li><strong>LiveBench</strong>: objective, judge-free, live-refreshed. Trust for task quality; funder COI undisclosed.</li><li><strong>MMLU-Pro</strong>: no gaming found. Trust as knowledge floor; saturated, static.</li><li><strong>ARC-AGI-2</strong>: well-governed. Trust as reasoning-ceiling signal; semi-private track risks overfitting.</li><li><strong>GPQA Diamond</strong>: no vendor COI. Trust below ceiling; saturated, some flawed-answer inflation admitted.</li><li><strong>SimpleBench</strong>: independent. Trust as one datapoint; n=9 baseline, undisclosed grading, prompt-sensitive.</li><li><strong>Arena (LMArena)</strong>: largest live sample. Trust for broad tiering only; confirmed gaming, VC conflicts.</li><li><strong>Humanity&#x27;s Last Exam</strong>: Meta owns 49%, scores own model. Trust hardest-tier only; ~29% bio/chem errors.</li><li><strong>Scale AI SEAL</strong>: Meta CAIO judges own models via board seat. Sound stats, no confirmed rigging.</li><li><strong>SimpleQA Verified</strong>: Google builds, hosts, tops own board. Trust narrowly, factual-recall only.</li><li><strong>FACTS Suite</strong>: Google self-judges via owned Kaggle, Gemini judges half. Trust relative-signal only.</li><li><strong>FrontierMath</strong>: OpenAI saw problems pre-launch, self-reports inflated 2.5x. Trust only post-fix third-party runs.</li></ol>
+<h4>PRIMARY</h4>
+<p><strong>LiveBench.</strong> No LLM-judge, graded scoring, monthly refresh: avoids Arena&#x27;s gaming vector and the Google/Meta self-judging conflicts running through half this list. Cite livebench.ai directly, not mirrors.</p>
+<h4>FLAGS</h4>
+<ul><li><strong>ARC-AGI-3 not cited here</strong> (its verdict is caveat): tests agentic play, not chat output; also for-profit founder-funded, contamination history.</li><li><strong>FrontierMath is weakest KEEP</strong>: vendor pre-access COI *and* proven 2.5x inflation; borderline, watch for re-audit.</li><li>No entry is canon-clean: every one carries a COI or saturation caveat; disclose ties in your copy.</li></ul>
+<p>PRIMARY: LiveBench</p>
+</div></details>
+<h3 id="cat-coding">Coding + software agents</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-aider-polyglot"><td><a href="https://aider.chat/docs/leaderboards/">Aider Polyglot Leaderboard</a></td><td><span class="v v-caveat">caveat</span></td><td>Sound execution-graded methodology, no capture, but stale since Oct 2025: missing all 2026 frontier models</td><td><a href="evidence/aider-polyglot.md">evidence</a></td></tr>
+<tr id="row-deep-swe"><td><a href="https://deepswe.datacurve.ai">Deep SWE (Data Curve)</a></td><td><span class="v v-caveat">caveat</span></td><td>Real gains but self-graded flagship claim, confirmed cost bug, 4 broken golds, vendor-sales conflict, early re-saturation.</td><td><a href="evidence/deep-swe.md">evidence</a></td></tr>
+<tr id="row-livecodebench"><td><a href="https://livecodebench.github.io/leaderboard.html">LiveCodeBench</a></td><td><span class="v v-caveat">caveat</span></td><td>Problem pool frozen since Apr 2025, self-reported scores, near-saturated top tier; use as historical snapshot only.</td><td><a href="evidence/livecodebench.md">evidence</a></td></tr>
+<tr id="row-terminal-bench"><td><a href="https://www.tbench.ai/">Terminal-Bench 2.x</a></td><td><span class="v v-caveat">caveat</span></td><td>Real leaderboard cheating + unpatched harness exploit found; still discriminates: must name score source (tbench.ai vs AA diverge).</td><td><a href="evidence/terminal-bench.md">evidence</a></td></tr>
+<tr id="row-swe-bench-pro"><td><a href="https://labs.scale.com/leaderboard/swe_bench_pro_public">SWE-bench Pro</a></td><td><span class="v v-cut">cut</span></td><td>Live Meta 49% COI scoring its own model, OpenAI retracted its endorsement over 30% broken tasks, unpatched reward-hacking exploit.</td><td><a href="evidence/swe-bench-pro.md">evidence</a></td></tr>
+<tr id="row-swe-bench-verified"><td><a href="https://www.swebench.com">SWE-bench Verified</a></td><td><span class="v v-cut">cut</span></td><td>Funder&#x27;s own audit proved contamination+broken tests; 3 gaming incidents; frontier-saturated; successor also retracted.</td><td><a href="evidence/swe-bench-verified.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Coding + software agents</summary>
+<div class="memo">
+<h4>Coding: Benchmark Trust Canon</h4>
+<h5>KEEP (ranked by trust strength)</h5>
+<ol><li><strong>Aider Polyglot Leaderboard</strong>: trust it for clean, execution-graded coding-edit quality among pre-Oct-2025 models (no gaming found); don&#x27;t use it to rank any 2026 model, it isn&#x27;t in the dataset.</li><li><strong>Terminal-Bench 2.x</strong>: trust it for relative agentic/terminal task-completion signal between current models; don&#x27;t cite a bare score, real leaderboard cheating and an unpatched harness exploit were found, so always name your source (tbench.ai vs Artificial Analysis diverge).</li><li><strong>LiveCodeBench</strong>: trust it as a historical snapshot through ~Apr 2025; don&#x27;t use it for current comparisons, pool is frozen, scores are self-reported, top tier is saturated.</li></ol>
+<h5>Primary</h5>
+<p><strong>Terminal-Bench 2.x</strong>, not the #1-ranked Aider. Aider is the cleaner benchmark but is blind to every 2026 frontier model, so it can&#x27;t answer the question an SMB actually needs answered: does this current tool finish real coding work? Terminal-Bench still discriminates between today&#x27;s models despite its integrity problems, and it tests the agentic/terminal task-completion shape that SMB coding tools actually sell. Cite it with the specific score source pinned: never a bare number.</p>
+<h5>Cut</h5>
+<ul><li><strong>SWE-bench Verified</strong>: CUT: funder&#x27;s own audit found contamination + broken tests, 3 gaming incidents, saturated, successor also retracted. Still the name most people default to asking for: expect the question.</li><li><strong>SWE-bench Pro</strong>: CUT: Meta scores its own model live (49% COI), OpenAI retracted its endorsement over 30% broken tasks, reward-hacking exploit unpatched.</li></ul>
+<p>PRIMARY: Terminal-Bench 2.x</p>
+</div></details>
+<h3 id="cat-agentic">Agentic / computer-use</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-cybench"><td><a href="https://cybench.github.io/">Cybench</a></td><td><span class="v v-caveat">caveat</span></td><td>Saturated at frontier (near-100%), documented flag-fetching cheats, self-reported leaderboard; still valid as sub-frontier floor gate.</td><td><a href="evidence/cybench.md">evidence</a></td></tr>
+<tr id="row-metr-time-horizon"><td><a href="https://metr.org/time-horizons/">METR Time Horizon</a></td><td><span class="v v-caveat">caveat</span></td><td>Self-admitted frontier saturation, on-suite reward-hacking, 20-35% methodology-driven swings; still best macro-trend reference.</td><td><a href="evidence/metr-time-horizon.md">evidence</a></td></tr>
+<tr id="row-osworld-2"><td><a href="https://os-world.github.io/">OSWorld 2.0 / OSWorld-Verified</a></td><td><span class="v v-caveat">caveat</span></td><td>OSWorld 2.0 discriminates and is live; -Verified branch is saturated and its BenchJack-exploited gold files remain unpatched.</td><td><a href="evidence/osworld-2.md">evidence</a></td></tr>
+<tr id="row-tau2-bench"><td><a href="https://github.com/sierra-research/tau2-bench">tau2-bench</a></td><td><span class="v v-caveat">caveat</span></td><td>Owner&#x27;s CEO chairs OpenAI&#x27;s board, Google GV invests; open+pass^k discriminate, but pin version, skip aggregators.</td><td><a href="evidence/tau2-bench.md">evidence</a></td></tr>
+<tr id="row-vending-bench-2"><td><a href="https://andonlabs.com/evals/vending-bench-2">Vending-Bench 2</a></td><td><span class="v v-caveat">caveat</span></td><td>Unsaturated, actively updated, but single-operator harness with real lab-funding COI and no independent replication.</td><td><a href="evidence/vending-bench-2.md">evidence</a></td></tr>
+<tr id="row-webarena-verified"><td><a href="https://webarena.dev/">WebArena-Verified</a></td><td><span class="v v-caveat">caveat</span></td><td>ServiceNow-run; BenchJack never retested it; raw gold-answer file still shipped; near-zero adoption; unverified since Mar 2026.</td><td><a href="evidence/webarena-verified.md">evidence</a></td></tr>
+<tr id="row-gaia"><td><a href="https://huggingface.co/spaces/gaia-benchmark/leaderboard">GAIA</a></td><td><span class="v v-cut">cut</span></td><td>Grader exploited to ~98% (Berkeley RDI, Apr 2026); HAL paused; creators shipped GAIA2 successor; no clean citable split.</td><td><a href="evidence/gaia.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Agentic / computer-use</summary>
+<div class="memo">
+<h4>KEEP list: canon+caveat, ranked</h4>
+<ol><li><strong>METR Time Horizon</strong>: trust it for the macro trend (how far agent task-length is climbing over time); not for head-to-head frontier ranking, reward-hacking, 20-35% methodology swings.</li><li><strong>OSWorld 2.0</strong>: trust it for live, current computer-use/GUI-agent discrimination; not the -Verified branch, gold files remain BenchJack-exploited and unpatched.</li><li><strong>tau2-bench</strong>: trust it for tool-use/customer-service discrimination, pinned version only; not via aggregator rollups, weigh the OpenAI-board/GV conflict.</li><li><strong>Vending-Bench 2</strong>: trust it for long-horizon autonomous business-simulation capability, unsaturated and updated; not as independently verified, single-operator harness, lab-funding COI, no replication.</li><li><strong>Cybench</strong>: trust it as a sub-frontier floor gate only; not for frontier ranking, saturated near 100%, flag-fetching cheats documented, self-reported leaderboard.</li><li><strong>WebArena-Verified</strong>: trust it weakly for legacy citation only; not current claims, near-zero adoption, unverified since Mar 2026, raw gold-answer file still shipped.</li></ol>
+<h4>PRIMARY</h4>
+<p><strong>METR Time Horizon.</strong> It&#x27;s the only entry whose refuter called it &quot;best&quot; despite flaws: it directly measures the core definition of &quot;agentic&quot; (autonomous task length over time), and its caveats are known-magnitude (20-35% swings), not structural COI or saturation. Cite the trend, not one point.</p>
+<h4>Flags</h4>
+<ul><li><strong>GAIA: CUT.</strong> Grader exploited to ~98% (Berkeley RDI, Apr 2026); HAL paused; creators shipped GAIA2 successor. Don&#x27;t cite GAIA; revisit if GAIA2 gets an independent, unsaturated split.</li><li>No entry here was labeled unconfirmed: all 7 got a definitive verdict.</li></ul>
+<p>PRIMARY: METR Time Horizon</p>
+</div></details>
+<h3 id="cat-search">Search / research engines</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-search-arena"><td><a href="https://arena.ai/leaderboard/search">Arena Search Arena</a></td><td><span class="v v-caveat">caveat</span></td><td>Only live search arena found; but paid lab-optimization revenue + admitted org-bias + 9-way tie below #1.</td><td><a href="evidence/search-arena.md">evidence</a></td></tr>
+<tr id="row-browsecomp"><td><a href="https://leaderboard.steel.dev/leaderboards/browsecomp/">BrowseComp</a></td><td><span class="v v-caveat">caveat</span></td><td>Self-reported scores dominate; Anthropic found a model decrypting the answer key; use only for coarse ranking.</td><td><a href="evidence/browsecomp.md">evidence</a></td></tr>
+<tr id="row-futuresearch-drb"><td><a href="https://futuresearch.ai/deep-research-bench/">Deep Research Bench (FutureSearch)</a></td><td><span class="v v-caveat">caveat</span></td><td>Frozen-corpus, non-saturated, no gaming found; but lead investor + clients include labs it ranks, esp. Anthropic.</td><td><a href="evidence/futuresearch-drb.md">evidence</a></td></tr>
+<tr id="row-deepresearch-bench-ustc"><td><a href="https://deepresearch-bench.github.io/">DeepResearch Bench (USTC)</a></td><td><span class="v v-caveat">caveat</span></td><td>Active &amp; unsaturated, but judge=contestant self-preference (Gemini→now GPT-5.5) and rampant collision with FutureSearch&#x27;s same-named bench</td><td><a href="evidence/deepresearch-bench-ustc.md">evidence</a></td></tr>
+<tr id="row-freshqa"><td><a href="https://github.com/freshllms/freshqa">FreshQA</a></td><td><span class="v v-cut">cut</span></td><td>Cadence dead 11+ wks past self-set date; core search-vs-memorization signal empirically broken (74.3%); Google self-grades own model.</td><td><a href="evidence/freshqa.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Search / research engines</summary>
+<div class="memo">
+<h4>Search: Benchmark Trust Canon</h4>
+<p><strong>KEEP (ranked)</strong></p>
+<ol><li><strong>Deep Research Bench (FutureSearch)</strong>: trust for: relative report quality across labs on a frozen, non-saturated corpus; not for: a bias-free read on Anthropic (its investor/clients include labs it ranks).</li><li><strong>DeepResearch Bench (USTC)</strong>: trust for: coarse tracking of an active, unsaturated field; not for: scores touching the judge model&#x27;s own family (self-preference bias), and never bare-cite, name collides with #1.</li><li><strong>Arena Search Arena</strong>: trust for: a rough &quot;do real users like this&quot; signal, the only live search arena that exists; not for: fine differentiation below #1 (9-way tie) or ranks involving labs that pay for optimization.</li><li><strong>BrowseComp</strong>: trust for: coarse top-vs-bottom tiering only; not for: precise scores, self-reported numbers dominate, and Anthropic caught a model decrypting the answer key outright.</li></ol>
+<p><strong>Primary citation</strong></p>
+<p><strong>Deep Research Bench (FutureSearch).</strong> It&#x27;s the only one of the four with an explicit &quot;no gaming found,&quot; on a frozen/non-saturated design, the strongest integrity signal here, and long-form research-report quality is the closest proxy to what an SMB actually judges a search tool on. Disclose the Anthropic investor/client tie in your footnote.</p>
+<p><strong>Flags</strong></p>
+<ul><li>FreshQA: CUT: cadence dead 11+ weeks past its own schedule, core signal broken (74.3%), Google self-grades. Do not cite.</li><li>Two unrelated benchmarks share the name &quot;Deep Research Bench&quot; (USTC vs. FutureSearch): always name the org, never bare-cite.</li></ul>
+<p>PRIMARY: Deep Research Bench (FutureSearch)</p>
+</div></details>
+<h3 id="cat-image">Image generation</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-arena-media"><td><a href="https://arena.ai/leaderboard/text-to-image">Arena.ai Image/Video Arenas</a></td><td><span class="v v-caveat">caveat</span></td><td>Live+discriminates at top, but pay-to-be-ranked conflict + proven deanonymization exploit; trust only high-vote entries.</td><td><a href="evidence/arena-media.md">evidence</a></td></tr>
+<tr id="row-aa-image-arena"><td><a href="https://artificialanalysis.ai/image/arena">Artificial Analysis Image Arena</a></td><td><span class="v v-caveat">caveat</span></td><td>Live + published Elo methodology, but demonstrated de-anonymization exploit and paid private-benchmarking ties to ranked labs warrant caution.</td><td><a href="evidence/aa-image-arena.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Image generation</summary>
+<div class="memo">
+<p>No canon-tier benchmark exists for this category: both survivors below are caveat-tier only.</p>
+<p><strong>KEEP (ranked):</strong></p>
+<ol><li><strong>Arena.ai Image/Video Arenas</strong> (CAVEAT): trust it for directional preference ranking among high-vote entries; not for absolute scores, new/low-vote models, or fine Elo deltas.</li><li><strong>Artificial Analysis Image Arena</strong> (CAVEAT): trust it for cross-provider comparison views and transparent, published methodology; not for any ranking involving a lab that may hold a paid private-benchmarking relationship with AA.</li></ol>
+<p><strong>Primary citation:</strong> Arena.ai Image/Video Arenas, filtered to high-vote entries only. Both survivors share the same deanonymization exploit, so that&#x27;s a wash. The tiebreaker is conflict shape: AA&#x27;s paid private-benchmarking relationship with ranked labs sits inside the assessment itself, with no way for a reader to filter it out. Arena.ai&#x27;s pay-to-rank issue is mainly an inclusion/gatekeeping problem, and &quot;high-vote only&quot; is a real, disclosable filter a page that cites it can actually apply. Neither is clean; Arena.ai&#x27;s flaw is the more containable one.</p>
+<p><strong>Flags:</strong></p>
+<ul><li>Neither is clean canon: both are best-available-with-caveats; your copy should say &quot;human-voted, gameable,&quot; never &quot;verified&quot; or &quot;independent.&quot;</li><li>The same exploit class (deanonymization) hit both products: treat it as a category-wide risk, not one bad actor.</li><li>Academic/vendor-neutral benchmarks (HPSv2, PickScore, ImageReward, T2I-CompBench) weren&#x27;t in scope here: unconfirmed, not cleared; don&#x27;t backfill with them silently.</li><li>AA&#x27;s private-benchmarking client list isn&#x27;t public: don&#x27;t let your copy imply independence you can&#x27;t verify.</li></ul>
+<p>PRIMARY: Arena.ai Image/Video Arenas</p>
+</div></details>
+<h3 id="cat-video">Video generation</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-aa-video-arena"><td><a href="https://artificialanalysis.ai/video/arena">Artificial Analysis Video Arena</a></td><td><span class="v v-caveat">caveat</span></td><td>Real blind-vote methodology, no-pay-for-rank disclosure, but anonymous/unverified entrants (HappyHorse) rank top-5; re-verify live, exclude unverified models.</td><td><a href="evidence/aa-video-arena.md">evidence</a></td></tr>
+<tr id="row-vbench-2"><td><a href="https://vchitect.github.io/VBench-project/">VBench / VBench-2.0</a></td><td><span class="v v-caveat">caveat</span></td><td>Academic, no vendor-pay found; v1 saturating, board stale since Apr 2026, circulating numbers often vendor self-reported.</td><td><a href="evidence/vbench-2.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Video generation</summary>
+<div class="memo">
+<h4>Video</h4>
+<p><strong>KEEP (ranked)</strong></p>
+<ol><li><strong>Artificial Analysis Video Arena</strong> (caveat): trust it for live, relative ranking among named, verified commercial models. Not for the top-5 as displayed as-is; anonymous entrants (HappyHorse-class) game rank position, exclude before citing.</li><li><strong>VBench / VBench-2.0</strong> (caveat): trust it for dimension-level eval methodology (motion smoothness, consistency, quality breakdown) as a framework reference. Not for &quot;current best&quot; claims; board stale since Apr 2026, and numbers circulating elsewhere are often vendor self-reported, not pulled from the actual board.</li></ol>
+<p><strong>Primary and why:</strong> Artificial Analysis Video Arena. It&#x27;s the only live board of the two, and video-gen ships new models weekly, so a leaderboard frozen since April actively misleads an SMB buyer toward an outdated pick. Blind-vote plus disclosed no-pay-for-rank gives real methodology integrity. Its flaw (anonymous entrants) is a filterable curation problem, not a structural one: a page that cites it should show only named, purchasable tools and re-pull the entrant list at build time instead of caching a stale snapshot.</p>
+<p><strong>Flags:</strong></p>
+<ul><li>HappyHorse-class anonymous entrants must be excluded from any AA Arena rank shown; re-verify the live entrant list at each rebuild, it shifts.</li><li>Don&#x27;t trust secondhand VBench numbers; they&#x27;re frequently vendor self-reported, not the actual board score.</li><li>VBench&#x27;s board hasn&#x27;t moved since Apr 2026; treat it as archival, not current.</li></ul>
+<p>PRIMARY: Artificial Analysis Video Arena</p>
+</div></details>
+<h3 id="cat-voice">Voice (TTS / STT)</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-aa-speech-arena"><td><a href="https://artificialanalysis.ai/text-to-speech/arena">Artificial Analysis Speech Arena</a></td><td><span class="v v-caveat">caveat</span></td><td>Human-voted, cost-normalized, refreshes 4x/daily; but #1/#2 statistically tied, funding self-disclosed only, rival arena disagrees entirely.</td><td><a href="evidence/aa-speech-arena.md">evidence</a></td></tr>
+<tr id="row-open-asr"><td><a href="https://huggingface.co/spaces/hf-audio/open_asr_leaderboard">Open ASR Leaderboard</a></td><td><span class="v v-caveat">caveat</span></td><td>NVIDIA co-authors methodology its own models top; AMI gaming (Jul 2026) exceeds leading margin; private-eval fix is opt-in, not default.</td><td><a href="evidence/open-asr.md">evidence</a></td></tr>
+<tr id="row-tts-arena-v2"><td><a href="https://huggingface.co/spaces/TTS-AGI/TTS-Arena-V2">TTS Arena V2</a></td><td><span class="v v-caveat">caveat</span></td><td>Live human-blind Elo, but a manipulated model held #1 undetected for months; top-10 is statistically noisy.</td><td><a href="evidence/tts-arena-v2.md">evidence</a></td></tr>
+<tr id="row-voice-arena"><td><a href="https://voicearena.com/">Voice Arena (voicearena.com)</a></td><td><span class="v v-caveat">caveat</span></td><td>Live, methodologically rigorous, vendor-independent (academic-funded); but ~4 months old, thin team, no disclosed vote-scale or audit.</td><td><a href="evidence/voice-arena.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Voice (TTS / STT)</summary>
+<div class="memo">
+<h4>KEEP (ranked; caveat-tier: no CANON here)</h4>
+<ol><li><strong>Artificial Analysis Speech Arena</strong>: trust for quality + cost/quality tradeoff across models; not for a definitive #1 (top two tied) or alone (rival arena disagrees entirely).</li><li><strong>Voice Arena (voicearena.com)</strong>: trust for a vendor-neutral, conflict-free read; not for scale yet (~4mo old, thin team, no disclosed votes/audit).</li><li><strong>TTS Arena V2</strong>: trust for a rough &quot;is this voice competitive&quot; check; not for precise top-10 rank or a #1 claim (gamed #1 undetected for months).</li><li><strong>Open ASR Leaderboard</strong>: trust only for rough STT comparisons among non-NVIDIA models via opt-in private-eval scores; not default order or NVIDIA&#x27;s own entries (co-authors the methodology, own models top it, AMI gaming now exceeds the leading margin).</li></ol>
+<h4>Primary</h4>
+<p><strong>Artificial Analysis Speech Arena.</strong> Its flaws are precision issues (a tie, unresolved cross-arena disagreement), not a proven integrity failure (TTS Arena&#x27;s months-long undetected manipulation) or baked-in conflict of interest (Open ASR&#x27;s NVIDIA-authored methodology). Cost-normalization is what SMB buyers need when picking a voice tool.</p>
+<h4>Flags</h4>
+<ul><li>Nothing here is CANON: render every ranking as directional, never a bare &quot;#1.&quot;</li><li>Open ASR answers a different question (transcription, not voice quality): don&#x27;t cite for TTS/voice-agent picks.</li><li>AA&#x27;s rival disagreeing &quot;entirely&quot; is unresolved: spot-check before a high-stakes recommendation.</li><li>Voice Arena: promote to primary if it survives 6-12 more months and discloses vote scale/audit.</li></ul>
+<p>PRIMARY: Artificial Analysis Speech Arena</p>
+</div></details>
+<h3 id="cat-docs">Documents / OCR</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-ocr-arena"><td><a href="https://www.ocrarena.ai/leaderboard">OCR Arena</a></td><td><span class="v v-caveat">caveat</span></td><td>Vendor-operated by Extend, YC-investor-amplified, undisclosed vote volumes, formatting-biased crowd votes; still discriminates, cross-checkable via idp-leaderboard.</td><td><a href="evidence/ocr-arena.md">evidence</a></td></tr>
+<tr id="row-ocrbench-v2"><td><a href="https://99franklin.github.io/ocrbench_v2/">OCRBench v2</a></td><td><span class="v v-caveat">caveat</span></td><td>Self-reported/0-verified scores + ByteDance co-authorship; still unsaturated + peer-reviewed + genuinely refreshed, use with disclosure.</td><td><a href="evidence/ocrbench-v2.md">evidence</a></td></tr>
+<tr id="row-omnidocbench"><td><a href="https://github.com/opendatalab/OmniDocBench">OmniDocBench</a></td><td><span class="v v-caveat">caveat</span></td><td>Self-reported-only leaderboard (0/16 verified), operator&#x27;s own MinerU tops it, saturated top cluster; floor test only, not ranking.</td><td><a href="evidence/omnidocbench.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Documents / OCR</summary>
+<div class="memo">
+<p>KEEP list (ranked; all CAVEAT: no canon-tier entry survives in &quot;docs&quot;)</p>
+<ol><li><strong>OCRBench v2</strong>: trust for relative accuracy ranking across a broad, current doc-extraction task set (peer-reviewed, unsaturated, actively refreshed); don&#x27;t take any single self-reported score at face value, especially for ByteDance-adjacent tools.</li><li><strong>OmniDocBench</strong>: trust as a floor test to catch tools that fail badly; don&#x27;t trust it to crown a winner (saturated top cluster, self-reported, and its operator&#x27;s own MinerU topping its own board isn&#x27;t evidence of anything).</li><li><strong>OCR Arena</strong>: trust as a secondary human-preference/formatting signal, cross-checked against idp-leaderboard; don&#x27;t trust it as a primary ranking (vendor-operated by Extend, YC-amplified, vote volume undisclosed, crowd bias toward formatting over accuracy).</li></ol>
+<p><strong>Primary citation:</strong> OCRBench v2: the only entry with independent peer review, a field still wide enough to discriminate between tools, and a real refresh cadence. Disclose the self-reported-score caveat regardless of citation.</p>
+<p><strong>Flags:</strong></p>
+<ul><li>No canon-tier (independently verified) doc/OCR benchmark exists anywhere right now: a category-wide gap, not one tool&#x27;s problem.</li><li>OmniDocBench: MinerU topping its own board is a live conflict: never cite as a MinerU &quot;win.&quot;</li><li>OCRBench v2: ByteDance co-authorship: disclose if citing for any ByteDance-affiliated tool.</li><li>OCR Arena: vote volumes are undisclosed: never quote win-rate % as statistically solid.</li></ul>
+<p>PRIMARY: OCRBench v2</p>
+</div></details>
+<h3 id="cat-safety">Safety / red-teaming</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-agentharm"><td><a href="https://huggingface.co/datasets/ai-safety-institute/AgentHarm">AgentHarm</a></td><td><span class="v v-caveat">caveat</span></td><td>Solid methodology/contamination controls, actively maintained infra, but frozen 2024 judge/content and unconfirmed 2026 frontier discrimination.</td><td><a href="evidence/agentharm.md">evidence</a></td></tr>
+<tr id="row-harmbench"><td><a href="https://arxiv.org/abs/2402.04249">HarmBench</a></td><td><span class="v v-caveat">caveat</span></td><td>Frozen since Aug 2024; own judge tested near-random in 2026; single-turn ASR misses multi-turn jailbreak reality.</td><td><a href="evidence/harmbench.md">evidence</a></td></tr>
+<tr id="row-phare"><td><a href="https://phare.giskard.ai/">Phare LLM Benchmark</a></td><td><span class="v v-caveat">caveat</span></td><td>Self-authored methodology + Anthropic-family judge seat + paid-audit vendor motive; still discriminates, govt-funded, actively updated.</td><td><a href="evidence/phare.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Safety / red-teaming</summary>
+<div class="memo">
+<h4>Safety: category verdict</h4>
+<p>No canon-tier entry: all three cleared refutation only as caveat.</p>
+<p><strong>KEEP, ranked:</strong></p>
+<ol><li><strong>AgentHarm</strong>: trust for agentic/tool-use refusal behavior (multi-step fraud/hacking/harm scripts) under solid contamination controls; not for ranking 2026 frontier models, judge/content frozen 2024, current discrimination unconfirmed.</li><li><strong>Phare LLM Benchmark</strong>: trust for a live, currently-discriminating safety signal, actively updated; not for neutrality, self-authored methodology, Anthropic-family judge seat, and paid-audit vendor motive all pull the score.</li><li><strong>HarmBench</strong>: trust only for rough pre-2024 single-turn jailbreak history; not for anything current, its own judge scored near-random in 2026 retest, and single-turn ASR misses today&#x27;s dominant multi-turn jailbreak threat.</li></ol>
+<p><strong>Primary citation: AgentHarm.</strong> Its gap is an evidence gap (&quot;unconfirmed for 2026&quot;), not a proven conflict of interest (Phare) or a broken scoring instrument (HarmBench). On a trust-canon page, &quot;sound method, stale currency&quot; beats &quot;current but conflicted&quot; or &quot;current but broken.&quot;</p>
+<p><strong>Flags:</strong></p>
+<ul><li>HarmBench: judge near-random in 2026: never present its numbers as current without an &quot;as of 2024&quot; stamp.</li><li>Phare: paid-audit vendor + same-family judge = real conflict of interest: secondary data point only, never sole source.</li><li>AgentHarm: 2026 frontier discrimination unverified, not confirmed broken: worth a re-check before trusting frozen rankings as live.</li></ul>
+<p>PRIMARY: AgentHarm</p>
+</div></details>
+<h3 id="cat-aggregator">Aggregators</h3>
+<div class="scroll"><table>
+<thead><tr><th>Benchmark</th><th>Verdict</th><th>Caveat</th><th>Evidence</th></tr></thead>
+<tbody>
+<tr id="row-benchlm"><td><a href="https://benchlm.ai/about">BenchLM.ai</a></td><td><span class="v v-caveat">caveat</span></td><td>Solo aggregator, no independent recompute/contamination check, unaudited ad firewall, confirmed within-page stale copy; still discriminates at frontier.</td><td><a href="evidence/benchlm.md">evidence</a></td></tr>
+<tr id="row-epoch-hub"><td><a href="https://epoch.ai/benchmarks">Epoch AI Benchmarking Hub / ECI</a></td><td><span class="v v-caveat">caveat</span></td><td>OpenAI-funded FrontierMath COI (disclosed late) plus SWE-bench Verified kept in ECI after OpenAI called it contaminated.</td><td><a href="evidence/epoch-hub.md">evidence</a></td></tr>
+<tr id="row-hal-princeton"><td><a href="https://hal.cs.princeton.edu/">HAL (Holistic Agent Leaderboard)</a></td><td><span class="v v-caveat">caveat</span></td><td>Independent, not vendor-captured, but frozen since Jul 2026 and published rankings shown statistically unreliable by outside analysis.</td><td><a href="evidence/hal-princeton.md">evidence</a></td></tr>
+<tr id="row-llm-stats"><td><a href="https://llm-stats.com/">llm-stats.com</a></td><td><span class="v v-caveat">caveat</span></td><td>Owner traceable (ZeroEval/YC S25); blended score sane but LiveBench subpage confirmed stale (o3-mini #1); undisclosed Google-backer conflict.</td><td><a href="evidence/llm-stats.md">evidence</a></td></tr>
+<tr id="row-openrouter-rankings"><td><a href="https://openrouter.ai/rankings">OpenRouter Rankings</a></td><td><span class="v v-caveat">caveat</span></td><td>Token-volume telemetry, not quality; misleading copy, gameable via free-tier promos, Alphabet a material investor: label as adoption signal.</td><td><a href="evidence/openrouter-rankings.md">evidence</a></td></tr>
+<tr id="row-vellum-board"><td><a href="https://www.vellum.ai/llm-leaderboard">Vellum LLM Leaderboard</a></td><td><span class="v v-caveat">caveat</span></td><td>VC-funded, model-agnostic aggregator; real data but no published methodology, and still headlines contaminated/disavowed SWE-bench: treat as directory, not authority.</td><td><a href="evidence/vellum-board.md">evidence</a></td></tr>
+</tbody></table></div>
+<details class="memo-box"><summary>Judge memo: Aggregators</summary>
+<div class="memo">
+<h4>Aggregator Category: Trust Verdict</h4>
+<p><strong>KEEP, ranked (all CAVEAT, none clean canon):</strong></p>
+<ol><li><strong>Epoch AI Benchmarking Hub / ECI</strong>: trust for live capability-trend tracking; not for FrontierMath claims (late-disclosed OpenAI funding COI) or SWE-bench Verified rank order (OpenAI called it contaminated, kept anyway).</li><li><strong>HAL</strong>: trust only as a historical snapshot of an independent, non-vendor-captured methodology; not for &quot;who&#x27;s winning now&quot; (frozen since Jul 2026, rankings statistically unreliable).</li><li><strong>llm-stats.com</strong>: trust the blended composite score as a rough cross-check; not the LiveBench subpage (confirmed stale, o3-mini stuck #1) or Gemini-adjacent calls (undisclosed Google-backer conflict).</li><li><strong>Vellum</strong>: trust as a raw-data directory to cross-check elsewhere; not as an authority (no published methodology, still headlines disavowed SWE-bench).</li><li><strong>BenchLM.ai</strong>: trust for almost nothing standalone; confirmed stale copy, no independent recompute, unaudited ad firewall. Spot-check only.</li><li><strong>OpenRouter Rankings</strong>: trust strictly as production-adoption telemetry; never for quality (token volume not capability, promo-gameable, Alphabet a material investor).</li></ol>
+<p><strong>PRIMARY:</strong> Epoch AI Benchmarking Hub / ECI: live (unlike frozen HAL), disclosed not hidden (unlike llm-stats), flaws scoped to 2 named components, not the whole index. Cite for trend direction; footnote out FrontierMath and SWE-bench Verified.</p>
+<p><strong>Flags:</strong></p>
+<ul><li>Standing rule: llm-stats/Vellum/BenchLM stay discovery-only, not citation of record; OpenRouter stays adoption-not-quality.</li><li>HAL&#x27;s rankings are already statistically discredited; one bad cycle from CUT alongside BenchLM.</li><li>Nothing here returned CUT or unconfirmed this round.</li></ul>
+<p>PRIMARY: Epoch AI Benchmarking Hub / ECI</p>
+</div></details>
+<h2>Voids nobody measures</h2>
+<ul>
+<li>SMB SaaS tools: NO independent capability benchmark exists (Salesforce grades itself; G2 bought Capterra + Software Advice + GetApp Feb 2026: one pay-to-play owner).</li>
+<li>Run-to-run reliability: nobody measures consistency across repeated runs: the thing an operator experiences as trustworthy. tau2-bench&#x27;s pass^k is the lone partial exception.</li>
+<li>Human-oversight cost: capability-per-dollar exists; check-its-work time is measured nowhere. Princeton HAL&#x27;s cost axis was closest and is now frozen.</li>
+<li>AI-search accuracy: no credible independent study since Columbia Tow Center (Mar 2025, all-eight-bad). Every circulating percentage is SEO/vendor content.</li>
+<li>Voice-cloning fidelity: no neutral benchmark isolates clone similarity; every &#x27;#1 at cloning&#x27; claim is vendor marketing.</li>
+<li>Safety currency: no continuously-updated public safety leaderboard exists the way capability ones do: &#x27;is it safe&#x27; is structurally less visible to a buyer than &#x27;is it smart&#x27;.</li>
+</ul>
+<h2>Standing citation rules</h2>
+<ol>
+<li>Primary sources are the citation of record; SEO aggregators (benchlm / llm-stats / localaimaster class) are discovery-only.</li>
+<li>Composites beat single benches, but know the components: a rotten ingredient (FrontierMath, SWE-bench Verified in ECI) taints the blend silently.</li>
+<li>NAME THE HARNESS on any agent or coding score: on Terminal-Bench the same model scored 58% in one harness and 75 to 82% in others (Theo Browne, t3.gg, &quot;Did Claude really get dumber again?&quot;, 2026-04-20, https://www.youtube.com/watch?v=KFisvc-AMII).</li>
+<li>Adoption is not quality: OpenRouter volume is telemetry; AA&#x27;s #1 ranks #7 by usage.</li>
+<li>A vendor&#x27;s own model leading the vendor&#x27;s own benchmark is never evidence (Google/FACTS+SimpleQA-Verified, OpenAI/GDPval, MinerU/OmniDocBench, NVIDIA/Open-ASR).</li>
+<li>Arenas: high-vote, named entrants only; call them &#x27;human-voted, gameable&#x27;, never &#x27;independent&#x27;.</li>
+<li>Stamp every citation &#x27;as of &lt;date&gt;&#x27;; frozen boards (Aider Oct 2025, LiveCodeBench Apr 2025, VBench Apr 2026, HAL Jul 2026) are archival, not current.</li>
+<li>Never a bare #1: frontier gaps sit inside statistical noise on nearly every board (top-10 within ~20 Elo on Arena; 4 trackers, 4 different MMLU-Pro leaders).</li>
+<li>Disclose the named caveat every time a canon benchmark is cited: the caveat IS the trust layer.</li>
+<li>Saturated benchmarks demote to floor-gates (Cybench, MMLU-Pro, GPQA): &#x27;passes the floor&#x27; is meaningful, ranking is not.</li>
+<li>Re-vet cadence: coding quarterly at minimum (the succession pattern: Verified -&gt; Pro -&gt; Deep SWE each re-developed the same failure), everything else semi-annually, any benchmark on a funding/ownership change immediately.</li>
+</ol>
+<h2>Sources this canon leans on</h2>
+<ul>
+<li><strong>Artificial Analysis</strong>: most cross-cited composite; funding undisclosed: caveat carried on every cite</li>
+<li><strong>Epoch AI</strong>: most transparent tiering; FrontierMath COI history; slow to prune its own composite</li>
+<li><strong>METR</strong>: predeployment access to 4 labs; funding undisclosed</li>
+<li><strong>ARC Prize Foundation</strong>: discloses lab donors: the disclosure practice is the differentiator</li>
+<li><strong>Theo Browne (t3.gg)</strong>: usage-grounded commentary; the name-the-harness rule follows his Terminal-Bench comparison</li>
+<li><strong>AI Explained / SimpleBench</strong>: rigor-tier YouTuber; own bench near-saturated (n=9 baseline caveat)</li>
+<li><strong>Zvi Mowshowitz · Nathan Lambert · Simon Willison</strong>: independent practitioner cross-checks; no lab affiliation</li>
+<li><strong>Vals AI</strong>: cleanest independence profile among domain-specific evaluators (legal/tax/finance)</li>
+</ul>
+</main>
+</body>
+</html>

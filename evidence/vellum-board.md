@@ -1,0 +1,13 @@
+**Vendor capture:** Vellum is VC-funded LLMOps SaaS ($20-25M Series A: Leaders Fund, YC, Socii, Rebel, Pioneer, Eastlink; no AI-lab investor found) selling eval/deployment tooling across all model providers (businesswire.com/news/home/20250710009580/en/Vellum-Raises-$20M-Series-A). Model-agnostic revenue = weak incentive to favor one vendor, but the leaderboard is unmistakable SEO/lead-gen for its SaaS funnel (vellum.ai/llm-leaderboard).
+
+**Methodology/contamination:** Page discloses data comes from "model providers... or the open-source community" plus Vellum's own proprietary tests "to fill gaps" via "Vellum Evals" (vellum.ai/llm-leaderboard; grokipedia.com/page/Vellum_AI_Coding_LLM_Leaderboard): contradicts the "no original evals" prior. No methodology paper, held-out set, or reproducibility protocol found; vellum.ai/about returns 404. Worse: its featured "Best in Agentic Coding" metric is SWE-bench Verified, which OpenAI's own Frontier Evals team confirmed models reproduce gold patches verbatim from task ID alone, and stopped reporting Feb 23 2026 (codesota.com/news/swe-bench-contamination-debate): Vellum still headlines it in its "1 Jul 2026" refresh, contradicting its own stated policy of excluding "outdated" benchmarks like MMLU.
+
+**Saturation:** Mixed, confirmed. HLE still spreads (64.5%→54% top-5) = discriminating. GPQA Diamond compresses to 2.1pts across top-5 (96.2→94.1%), matching independent reports it's "approaching saturation at the very top" (futureagi.com/blog/llm-leaderboard-explained). SWE-bench: frontier models cluster ~88% industry-wide (digitalapplied.com/blog/swe-bench-verified-june-2026-benchmark-vs-scaffolding-analysis): no longer discriminates exactly where Vellum spotlights it.
+
+**Gaming history:** No documented incident of Vellum manipulating rankings found (HN/Reddit searches empty): absence of scrutiny, not proof of clean.
+
+**Staleness:** Claims "updated 1 Jul 2026"; Wayback Machine unreachable to verify cadence. Comparison table shows suspect context-window figures (4096 for GPT-4o/Claude 3.5 Sonnet/Llama-3.1-405B, all really 100K+): possibly a scrape artifact, unconfirmed either way.
+
+**Case FOR:** Usable as a directory pointing to primary-source numbers (pricing, rough frontier positioning) a reader can cross-check; model-agnostic incentive structure is a real, if unaudited, mitigant against single-vendor favoritism.
+
+VERDICT: caveat | Vellum LLM Leaderboard | VC-funded, model-agnostic aggregator; real data but no published methodology, and still headlines contaminated/disavowed SWE-bench: treat as directory, not authority.

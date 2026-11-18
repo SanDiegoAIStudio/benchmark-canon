@@ -1,0 +1,13 @@
+**Vendor capture/funding.** Home is confirmed as UC Berkeley's Sky Computing Lab with MIT/Cornell co-authors (Jain, Gu, Solar-Lezama, Stoica et al.), not UIUC as the prior signal assumed (github.com/LiveCodeBench/LiveCodeBench). Funded by NSF grants CCF-1900968/1908870 plus Sky Lab's industry affiliates: Google, IBM, Intel, Microsoft, Samsung SDS, Uber, VMware (arxiv.org/abs/2403.07974). Lab-level and disclosed, not a per-benchmark payment, but several affiliates' models are the ones being scored.
+
+**Contamination/methodology.** Grading is execution-based (real test cases), not LLM-judge, which removes judge-bias for the core scenario. But an independent Aug-2025 audit found the official harness had a stop-token cutoff, bad backtick extraction, and hardcoded chat templates that swung some models' scores by up to ~50% before a patch (blog.collinear.ai/p/lcb-bug-fixes). Leaderboard entries are self-reported via PR to a separate LiveCodeBench/submissions repo, not independently re-run (raw README): a structural gaming vector, unproven as abused.
+
+**Saturation.** Current top models cluster within a few points near 90% (Gemini 3 Pro Preview 91.7%, Gemini 3 Flash 90.8%, DeepSeek V3.2 Speciale 89.6%: artificialanalysis.ai/evaluations/livecodebench). LiveCodeBench Pro spun out as a harder olympiad-level variant (livecodebenchpro.com), a tacit admission the base benchmark is saturating for frontier models.
+
+**Gaming history.** No deliberate vendor-gaming found, but the harness-bug episode above produced wrong, sometimes dramatically inflated, scores for months until an outside party caught it.
+
+**Staleness: decisive.** GitHub API confirms the repo's last code push was 2025-07-16, with the 10 most recent commits (Apr-Jul 2025) all trivial, none adding problems (api.github.com/repos/LiveCodeBench/LiveCodeBench). The v6 problem pool is capped at problems through April 2025 per the official README; artificialanalysis.ai independently shows coverage only to May 2024. As of today, "continuously pulls new problems" has NOT held for 12+ months. "v6 July 2026, 194 models" conflates third-party rescoring/aggregation dates with a frozen dataset: the pool itself is not live.
+
+**Case for.** Sound, peer-reviewed (ICLR 2025) execution-based grading with transparent errata handling remains valid for comparing models trained before ~April 2025 against that frozen pool: just not as a live, contamination-resistant signal for 2026-era frontier models, which is the exact claim being sold.
+
+VERDICT: caveat | LiveCodeBench | Problem pool frozen since Apr 2025, self-reported scores, near-saturated top tier; use as historical snapshot only.

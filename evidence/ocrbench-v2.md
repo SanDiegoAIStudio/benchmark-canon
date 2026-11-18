@@ -1,0 +1,13 @@
+**Vendor capture**: Paper (arxiv.org/abs/2501.00321; NeurIPS 2025 D&B: proceedings.neurips.cc/paper_files/paper/2025/file/8c2e6bb15be1894b8fb4e0f9bcad1739-Paper-Datasets_and_Benchmarks_Track.pdf) lists four affiliations, not just HUST: Huazhong Univ. Sci&Tech, South China Univ. Tech, Univ. of Adelaide, and **ByteDance**: a commercial LMM vendor (Doubao/Seed family). "Academic-only" prior is incomplete. No funding-acknowledgment section found in accessible text. Current leaderboard top-5 (99franklin.github.io, 2026.06 English) isn't ByteDance-led, KDL Frontier 68.1, NVIDIA Nemotron 65.8, Qwen3.6 65.5, Qwen3.5 65.3, Gemini 3 Pro 63.4, but the structural conflict (co-owner also fields scored models) stands regardless of current rank.
+
+**Methodology integrity**: Public 10,000-QA set is downloadable (Drive + HuggingFace links on official site) = contamination-exposed by design. Mitigation is an unreleased 1,500-image private set, with authors claiming consistent public/private trends (arxiv.org/html/2501.00321v2): their claim, not third-party-reverified in what I could reach. Two independent trackers (llm-stats.com/benchmarks/ocrbench-v2, airank.dev/benchmarks/ocrbench-v2) describe the leaderboard as **self-reported, 0 independently verified results**: no confirmed third-party re-run layer. LLM-judge use for open-ended tasks: undisclosed, unconfirmed.
+
+**Saturation**: NOT saturated: leader scores 68.1/100 (99franklin.github.io/ocrbench_v2, 2026.06); the paper (arxiv.org/abs/2501.00321) states most LMMs score below 50/100, open-source models dropping 17.8% on photographed documents, 14% on non-Latin scripts. Real headroom, genuine frontier discrimination.
+
+**Gaming history**: No OCRBench-specific incident found; general benchmark-cheating coverage names MMLU/GSM8K/LMArena, not OCRBench. Absence of evidence, not proof of absence: self-report protocol is a live, unaudited gaming surface.
+
+**Staleness**: Refreshes are real: periods 2025.06/09, 2026.03, 2026.06 corroborated across official site + github.com/Yuliang-Liu/MultimodalOCR. Latest is ~6 weeks old. Cadence is irregular though (~6-month gap Sep'25→Mar'26): "quarterly" (site's own words: "we aim to update every quarter") is aspirational, not guaranteed.
+
+**FOR**: Peer-reviewed at NeurIPS 2025 D&B, large human-verified corpus (10K QA/31 scenarios, multiply confirmed), genuinely unsaturated, contamination-aware design, actively if irregularly maintained. Usable as a *relative* capability-ranking signal for document-OCR tasks between models, not as an independently-audited absolute score.
+
+VERDICT: caveat | OCRBench v2 | Self-reported/0-verified scores + ByteDance co-authorship; still unsaturated + peer-reviewed + genuinely refreshed, use with disclosure.

@@ -1,0 +1,557 @@
+{
+  "checked": "2026-07-17",
+  "benchmarks": [
+    {
+      "id": "aa-index",
+      "name": "Artificial Analysis Intelligence Index",
+      "cat": "composite",
+      "url": "https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index",
+      "verdict": "caveat",
+      "caveat": "Live, transparent, anti-gaming methodology; but funding/ownership stays off-site and payer/rated conflict undisclosed formally.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "arena-text",
+      "name": "Arena (LMArena) Text Leaderboard",
+      "cat": "chat-model",
+      "url": "https://arena.ai/leaderboard/text",
+      "verdict": "caveat",
+      "caveat": "Confirmed gaming precedent + VC conflicts + frontier saturation; live/current/largest-sample: use for broad tiering, not top-10 rank",
+      "round": "main",
+      "aliases": [
+        "Arena Text Leaderboard",
+        "LMArena"
+      ]
+    },
+    {
+      "id": "hle",
+      "name": "Humanity's Last Exam",
+      "cat": "chat-model",
+      "url": "https://agi.safe.ai/",
+      "verdict": "caveat",
+      "caveat": "Meta owns 49% of Scale/HLE; Meta's model ranks on it; ~29% bio/chem error rate confirmed: still discriminates, disclose ties.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "arc-agi-2",
+      "name": "ARC-AGI-2",
+      "cat": "chat-model",
+      "url": "https://arcprize.org/leaderboard",
+      "verdict": "caveat",
+      "caveat": "Well-governed but semi-private track admits overfitting risk; chat-model frontier already exceeds human baseline (92.5% vs ~60%).",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "arc-agi-3",
+      "name": "ARC-AGI-3",
+      "cat": "chat-model",
+      "url": "https://arcprize.org/competitions/2026/arc-agi-3",
+      "verdict": "caveat",
+      "caveat": "Live and unsaturated but founder-run for-profit is top funder; predecessor contamination history; tests agentic play not chat model output.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "frontiermath",
+      "name": "FrontierMath",
+      "cat": "chat-model",
+      "url": "https://epoch.ai/frontiermath",
+      "verdict": "caveat",
+      "caveat": "OpenAI funded+saw problems undisclosed till launch; 42% error rate fixed only June 2026; self-reported scores proven inflated 2.5x.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "gpqa-diamond",
+      "name": "GPQA Diamond",
+      "cat": "chat-model",
+      "url": "https://artificialanalysis.ai/evaluations/gpqa-diamond",
+      "verdict": "caveat",
+      "caveat": "Saturated at frontier (93-95%, cross-tracker noise ≈ model spread); creators' own group says top scores partly reflect predicting flawed answers.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "livebench",
+      "name": "LiveBench",
+      "cat": "chat-model",
+      "url": "https://livebench.ai/",
+      "verdict": "caveat",
+      "caveat": "Live, objective, no-LLM-judge scoring at the source; single-vendor funder, no COI disclosure; cite livebench.ai directly, not stale mirrors.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "mmlu-pro",
+      "name": "MMLU-Pro",
+      "cat": "chat-model",
+      "url": "https://benchlm.ai/benchmarks/mmluPro",
+      "verdict": "caveat",
+      "caveat": "Saturated at frontier (4 trackers, 4 different #1s, <2pt spread); legit academic origin, static 2yr set, no gaming found.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "gdpval",
+      "name": "GDPval / GDPval-AA v2",
+      "cat": "composite",
+      "url": "https://openai.com/index/gdpval/",
+      "verdict": "caveat",
+      "caveat": "OpenAI owns/authors the task corpus and self-judges via GPT-5.5; ~30% grading noise; top-2 gap is statistical noise.",
+      "round": "main",
+      "aliases": [
+        "GDPval",
+        "GDPval-AA v2"
+      ]
+    },
+    {
+      "id": "simpleqa-verified",
+      "name": "SimpleQA Verified",
+      "cat": "chat-model",
+      "url": "https://www.kaggle.com/benchmarks/deepmind/simpleqa-verified",
+      "verdict": "caveat",
+      "caveat": "Google creates, hosts, and currently tops its own leaderboard; treat as directional signal, not neutral ranking.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "facts-suite",
+      "name": "FACTS Benchmark Suite",
+      "cat": "chat-model",
+      "url": "https://www.kaggle.com/benchmarks/google/facts",
+      "verdict": "caveat",
+      "caveat": "Google builds/hosts/self-judges via owned Kaggle; Gemini judges 2/4 legs; usable as relative signal only, not proof of superiority",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "seal-showdown",
+      "name": "Scale AI SEAL / SEAL Showdown",
+      "cat": "chat-model",
+      "url": "https://labs.scale.com/leaderboard",
+      "verdict": "caveat",
+      "caveat": "Meta owns 49%+its Chief AI Officer sits on Scale's board scoring his own lab's models; sound stats, no confirmed rigging yet.",
+      "round": "main",
+      "aliases": [
+        "Scale AI SEAL",
+        "SEAL Showdown"
+      ]
+    },
+    {
+      "id": "simplebench",
+      "name": "SimpleBench (AI Explained)",
+      "cat": "chat-model",
+      "url": "https://simple-bench.com/",
+      "verdict": "caveat",
+      "caveat": "Live, dual-mirrored, but near-saturated (81.9 vs 83.7 human), n=9 baseline, undisclosed grading method, prompting-sensitive.",
+      "round": "main",
+      "aliases": [
+        "SimpleBench",
+        "AI Explained"
+      ]
+    },
+    {
+      "id": "swe-bench-verified",
+      "name": "SWE-bench Verified",
+      "cat": "coding",
+      "url": "https://www.swebench.com",
+      "verdict": "cut",
+      "caveat": "Funder's own audit proved contamination+broken tests; 3 gaming incidents; frontier-saturated; successor also retracted.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "swe-bench-pro",
+      "name": "SWE-bench Pro",
+      "cat": "coding",
+      "url": "https://labs.scale.com/leaderboard/swe_bench_pro_public",
+      "verdict": "cut",
+      "caveat": "Live Meta 49% COI scoring its own model, OpenAI retracted its endorsement over 30% broken tasks, unpatched reward-hacking exploit.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "livecodebench",
+      "name": "LiveCodeBench",
+      "cat": "coding",
+      "url": "https://livecodebench.github.io/leaderboard.html",
+      "verdict": "caveat",
+      "caveat": "Problem pool frozen since Apr 2025, self-reported scores, near-saturated top tier; use as historical snapshot only.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "terminal-bench",
+      "name": "Terminal-Bench 2.x",
+      "cat": "coding",
+      "url": "https://www.tbench.ai/",
+      "verdict": "caveat",
+      "caveat": "Real leaderboard cheating + unpatched harness exploit found; still discriminates: must name score source (tbench.ai vs AA diverge).",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "aider-polyglot",
+      "name": "Aider Polyglot Leaderboard",
+      "cat": "coding",
+      "url": "https://aider.chat/docs/leaderboards/",
+      "verdict": "caveat",
+      "caveat": "Sound execution-graded methodology, no capture, but stale since Oct 2025: missing all 2026 frontier models",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "metr-time-horizon",
+      "name": "METR Time Horizon",
+      "cat": "agentic",
+      "url": "https://metr.org/time-horizons/",
+      "verdict": "caveat",
+      "caveat": "Self-admitted frontier saturation, on-suite reward-hacking, 20-35% methodology-driven swings; still best macro-trend reference.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "gaia",
+      "name": "GAIA",
+      "cat": "agentic",
+      "url": "https://huggingface.co/spaces/gaia-benchmark/leaderboard",
+      "verdict": "cut",
+      "caveat": "Grader exploited to ~98% (Berkeley RDI, Apr 2026); HAL paused; creators shipped GAIA2 successor; no clean citable split.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "osworld-2",
+      "name": "OSWorld 2.0 / OSWorld-Verified",
+      "cat": "agentic",
+      "url": "https://os-world.github.io/",
+      "verdict": "caveat",
+      "caveat": "OSWorld 2.0 discriminates and is live; -Verified branch is saturated and its BenchJack-exploited gold files remain unpatched.",
+      "round": "main",
+      "aliases": [
+        "OSWorld 2.0",
+        "OSWorld-Verified"
+      ]
+    },
+    {
+      "id": "webarena-verified",
+      "name": "WebArena-Verified",
+      "cat": "agentic",
+      "url": "https://webarena.dev/",
+      "verdict": "caveat",
+      "caveat": "ServiceNow-run; BenchJack never retested it; raw gold-answer file still shipped; near-zero adoption; unverified since Mar 2026.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "tau2-bench",
+      "name": "tau2-bench",
+      "cat": "agentic",
+      "url": "https://github.com/sierra-research/tau2-bench",
+      "verdict": "caveat",
+      "caveat": "Owner's CEO chairs OpenAI's board, Google GV invests; open+pass^k discriminate, but pin version, skip aggregators.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "browsecomp",
+      "name": "BrowseComp",
+      "cat": "search",
+      "url": "https://leaderboard.steel.dev/leaderboards/browsecomp/",
+      "verdict": "caveat",
+      "caveat": "Self-reported scores dominate; Anthropic found a model decrypting the answer key; use only for coarse ranking.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "vending-bench-2",
+      "name": "Vending-Bench 2",
+      "cat": "agentic",
+      "url": "https://andonlabs.com/evals/vending-bench-2",
+      "verdict": "caveat",
+      "caveat": "Unsaturated, actively updated, but single-operator harness with real lab-funding COI and no independent replication.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "cybench",
+      "name": "Cybench",
+      "cat": "agentic",
+      "url": "https://cybench.github.io/",
+      "verdict": "caveat",
+      "caveat": "Saturated at frontier (near-100%), documented flag-fetching cheats, self-reported leaderboard; still valid as sub-frontier floor gate.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "hal-princeton",
+      "name": "HAL (Holistic Agent Leaderboard)",
+      "cat": "aggregator",
+      "url": "https://hal.cs.princeton.edu/",
+      "verdict": "caveat",
+      "caveat": "Independent, not vendor-captured, but frozen since Jul 2026 and published rankings shown statistically unreliable by outside analysis.",
+      "round": "main",
+      "aliases": [
+        "HAL",
+        "Holistic Agent Leaderboard"
+      ]
+    },
+    {
+      "id": "search-arena",
+      "name": "Arena Search Arena",
+      "cat": "search",
+      "url": "https://arena.ai/leaderboard/search",
+      "verdict": "caveat",
+      "caveat": "Only live search arena found; but paid lab-optimization revenue + admitted org-bias + 9-way tie below #1.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "deepresearch-bench-ustc",
+      "name": "DeepResearch Bench (USTC)",
+      "cat": "search",
+      "url": "https://deepresearch-bench.github.io/",
+      "verdict": "caveat",
+      "caveat": "Active & unsaturated, but judge=contestant self-preference (Gemini→now GPT-5.5) and rampant collision with FutureSearch's same-named bench",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "futuresearch-drb",
+      "name": "Deep Research Bench (FutureSearch)",
+      "cat": "search",
+      "url": "https://futuresearch.ai/deep-research-bench/",
+      "verdict": "caveat",
+      "caveat": "Frozen-corpus, non-saturated, no gaming found; but lead investor + clients include labs it ranks, esp. Anthropic.",
+      "round": "main",
+      "aliases": [
+        "FutureSearch"
+      ]
+    },
+    {
+      "id": "freshqa",
+      "name": "FreshQA",
+      "cat": "search",
+      "url": "https://github.com/freshllms/freshqa",
+      "verdict": "cut",
+      "caveat": "Cadence dead 11+ wks past self-set date; core search-vs-memorization signal empirically broken (74.3%); Google self-grades own model.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "aa-image-arena",
+      "name": "Artificial Analysis Image Arena",
+      "cat": "image",
+      "url": "https://artificialanalysis.ai/image/arena",
+      "verdict": "caveat",
+      "caveat": "Live + published Elo methodology, but demonstrated de-anonymization exploit and paid private-benchmarking ties to ranked labs warrant caution.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "arena-media",
+      "name": "Arena.ai Image/Video Arenas",
+      "cat": "image",
+      "url": "https://arena.ai/leaderboard/text-to-image",
+      "verdict": "caveat",
+      "caveat": "Live+discriminates at top, but pay-to-be-ranked conflict + proven deanonymization exploit; trust only high-vote entries.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "vbench-2",
+      "name": "VBench / VBench-2.0",
+      "cat": "video",
+      "url": "https://vchitect.github.io/VBench-project/",
+      "verdict": "caveat",
+      "caveat": "Academic, no vendor-pay found; v1 saturating, board stale since Apr 2026, circulating numbers often vendor self-reported.",
+      "round": "main",
+      "aliases": [
+        "VBench",
+        "VBench-2.0"
+      ]
+    },
+    {
+      "id": "aa-video-arena",
+      "name": "Artificial Analysis Video Arena",
+      "cat": "video",
+      "url": "https://artificialanalysis.ai/video/arena",
+      "verdict": "caveat",
+      "caveat": "Real blind-vote methodology, no-pay-for-rank disclosure, but anonymous/unverified entrants (HappyHorse) rank top-5; re-verify live, exclude unverified models.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "tts-arena-v2",
+      "name": "TTS Arena V2",
+      "cat": "voice",
+      "url": "https://huggingface.co/spaces/TTS-AGI/TTS-Arena-V2",
+      "verdict": "caveat",
+      "caveat": "Live human-blind Elo, but a manipulated model held #1 undetected for months; top-10 is statistically noisy.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "aa-speech-arena",
+      "name": "Artificial Analysis Speech Arena",
+      "cat": "voice",
+      "url": "https://artificialanalysis.ai/text-to-speech/arena",
+      "verdict": "caveat",
+      "caveat": "Human-voted, cost-normalized, refreshes 4x/daily; but #1/#2 statistically tied, funding self-disclosed only, rival arena disagrees entirely.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "voice-arena",
+      "name": "Voice Arena (voicearena.com)",
+      "cat": "voice",
+      "url": "https://voicearena.com/",
+      "verdict": "caveat",
+      "caveat": "Live, methodologically rigorous, vendor-independent (academic-funded); but ~4 months old, thin team, no disclosed vote-scale or audit.",
+      "round": "main",
+      "aliases": [
+        "Voice Arena",
+        "voicearena.com"
+      ]
+    },
+    {
+      "id": "open-asr",
+      "name": "Open ASR Leaderboard",
+      "cat": "voice",
+      "url": "https://huggingface.co/spaces/hf-audio/open_asr_leaderboard",
+      "verdict": "caveat",
+      "caveat": "NVIDIA co-authors methodology its own models top; AMI gaming (Jul 2026) exceeds leading margin; private-eval fix is opt-in, not default.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "omnidocbench",
+      "name": "OmniDocBench",
+      "cat": "docs",
+      "url": "https://github.com/opendatalab/OmniDocBench",
+      "verdict": "caveat",
+      "caveat": "Self-reported-only leaderboard (0/16 verified), operator's own MinerU tops it, saturated top cluster; floor test only, not ranking.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "ocrbench-v2",
+      "name": "OCRBench v2",
+      "cat": "docs",
+      "url": "https://99franklin.github.io/ocrbench_v2/",
+      "verdict": "caveat",
+      "caveat": "Self-reported/0-verified scores + ByteDance co-authorship; still unsaturated + peer-reviewed + genuinely refreshed, use with disclosure.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "ocr-arena",
+      "name": "OCR Arena",
+      "cat": "docs",
+      "url": "https://www.ocrarena.ai/leaderboard",
+      "verdict": "caveat",
+      "caveat": "Vendor-operated by Extend, YC-investor-amplified, undisclosed vote volumes, formatting-biased crowd votes; still discriminates, cross-checkable via idp-leaderboard.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "harmbench",
+      "name": "HarmBench",
+      "cat": "safety",
+      "url": "https://arxiv.org/abs/2402.04249",
+      "verdict": "caveat",
+      "caveat": "Frozen since Aug 2024; own judge tested near-random in 2026; single-turn ASR misses multi-turn jailbreak reality.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "agentharm",
+      "name": "AgentHarm",
+      "cat": "safety",
+      "url": "https://huggingface.co/datasets/ai-safety-institute/AgentHarm",
+      "verdict": "caveat",
+      "caveat": "Solid methodology/contamination controls, actively maintained infra, but frozen 2024 judge/content and unconfirmed 2026 frontier discrimination.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "phare",
+      "name": "Phare LLM Benchmark",
+      "cat": "safety",
+      "url": "https://phare.giskard.ai/",
+      "verdict": "caveat",
+      "caveat": "Self-authored methodology + Anthropic-family judge seat + paid-audit vendor motive; still discriminates, govt-funded, actively updated.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "epoch-hub",
+      "name": "Epoch AI Benchmarking Hub / ECI",
+      "cat": "aggregator",
+      "url": "https://epoch.ai/benchmarks",
+      "verdict": "caveat",
+      "caveat": "OpenAI-funded FrontierMath COI (disclosed late) plus SWE-bench Verified kept in ECI after OpenAI called it contaminated.",
+      "round": "main",
+      "aliases": [
+        "Epoch AI Benchmarking Hub",
+        "ECI"
+      ]
+    },
+    {
+      "id": "vellum-board",
+      "name": "Vellum LLM Leaderboard",
+      "cat": "aggregator",
+      "url": "https://www.vellum.ai/llm-leaderboard",
+      "verdict": "caveat",
+      "caveat": "VC-funded, model-agnostic aggregator; real data but no published methodology, and still headlines contaminated/disavowed SWE-bench: treat as directory, not authority.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "benchlm",
+      "name": "BenchLM.ai",
+      "cat": "aggregator",
+      "url": "https://benchlm.ai/about",
+      "verdict": "caveat",
+      "caveat": "Solo aggregator, no independent recompute/contamination check, unaudited ad firewall, confirmed within-page stale copy; still discriminates at frontier.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "llm-stats",
+      "name": "llm-stats.com",
+      "cat": "aggregator",
+      "url": "https://llm-stats.com/",
+      "verdict": "caveat",
+      "caveat": "Owner traceable (ZeroEval/YC S25); blended score sane but LiveBench subpage confirmed stale (o3-mini #1); undisclosed Google-backer conflict.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "openrouter-rankings",
+      "name": "OpenRouter Rankings",
+      "cat": "aggregator",
+      "url": "https://openrouter.ai/rankings",
+      "verdict": "caveat",
+      "caveat": "Token-volume telemetry, not quality; misleading copy, gameable via free-tier promos, Alphabet a material investor: label as adoption signal.",
+      "round": "main",
+      "aliases": []
+    },
+    {
+      "id": "deep-swe",
+      "name": "Deep SWE (Data Curve)",
+      "cat": "coding",
+      "url": "https://deepswe.datacurve.ai",
+      "verdict": "caveat",
+      "caveat": "Real gains but self-graded flagship claim, confirmed cost bug, 4 broken golds, vendor-sales conflict, early re-saturation.",
+      "round": "standalone",
+      "aliases": [
+        "Deep SWE",
+        "Data Curve"
+      ]
+    }
+  ]
+}

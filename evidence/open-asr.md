@@ -1,0 +1,13 @@
+## Open ASR Leaderboard: Adversarial Verification
+
+**Vendor capture.** The leaderboard's own methodology paper (arXiv 2510.06961) is co-authored by three NVIDIA NeMo researchers (Koluguri, Żelasko, Majumdar) alongside HF staff: the same team whose Canary/Parakeet/Canary-Qwen models have repeatedly topped this exact board. HF itself took 2023 Series D money from Google, Amazon, Nvidia, Salesforce, IBM, Qualcomm ([TechCrunch](https://techcrunch.com/2023/08/24/hugging-face-raises-235m-from-investors-including-salesforce-and-nvidia/)): several of whom field competing entries (IBM Granite-Speech, Microsoft Phi-4-Multimodal). Model-vendor engineers co-designing the ranking methodology for their own top scorer is a structural conflict, not just optics.
+
+**Methodology/contamination.** AMI Meeting Corpus is a known train-on-test-adjacent weak point. A July 13, 2026 HackerNoon post, four days before this check, demonstrated fine-tuning ~6,000 steps on AMI training data to climb from rank 26→16 (WER 6.90→6.38) ([HackerNoon](https://hackernoon.com/we-used-benchmaxxers-favourite-trick-to-climb-10-places-on-the-hugging-face-open-asr-leaderboard)). HF's May 2026 Appen/DataoceanAI private-eval "benchmaxxer repellant" ([HF blog](https://huggingface.co/blog/open-asr-leaderboard-private-data)) is opt-in supplementary data: the **default** Average WER ranking still runs on public sets including AMI, so the fix doesn't cover what most viewers see.
+
+**Saturation.** An independent analysis (arXiv 2605.17273) audited this leaderboard specifically: top-1-to-top-2 gap is only 1.87%; ~30% of top-model pairwise comparisons show negligible effect size (Cohen's d≤0.2); 34.74% fail consistent win-rate; overall "fragility rate" 45.79%: conclusion: it "struggles to reliably discriminate between top performers." The AMI fine-tune trick above moves WER by roughly the same margin as the entire #1 to #2 gap.
+
+**Gaming history / liveness.** No prior scandal beyond the above, but that's largely because the board is young-ish and still actively growing (86 systems vs 60+ in Nov 2025; paper revised to v4 March 2026, [arXiv](https://arxiv.org/abs/2510.06961)), actively maintained, not stale.
+
+**Case for it.** Real reproducibility infra (fixed Docker/A100 harness, WER+RTFx both reported, verified-vs-self-reported split) makes it trustworthy for coarse tiering and speed/accuracy engineering tradeoffs across the full 86-system field: just not for "#1 is definitively best" claims.
+
+VERDICT: caveat | Open ASR Leaderboard | NVIDIA co-authors methodology its own models top; AMI gaming (Jul 2026) exceeds leading margin; private-eval fix is opt-in, not default.
