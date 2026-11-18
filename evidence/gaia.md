@@ -4,7 +4,7 @@
 
 **Saturation (lens 3):** Levels 1-2 reported near-ceiling/solved by frontier systems; Level 3 still resists: partial discrimination survives only in the hardest third of the set.
 
-**Gaming history (lens 4):** The RDI exploit above is dated, specific, reproducible, and institution-credible: same automated benchmark-breaking research class flagged in the brief, independently confirming it against GAIA specifically.
+**Gaming history (lens 4):** The RDI exploit above is dated, specific, reproducible, and institution-credible: it is automated benchmark-breaking research, and it confirms that kind of attack against GAIA specifically.
 
 **Staleness/liveness (lens 5):** Princeton HAL, the most rigorous third-party host, explicitly paused new-model GAIA updates to pivot to a "reliability" framework (hal.cs.princeton.edu/gaia); its own top entry (Claude Sonnet 4.5, 74.55%, Sept 2025) is ~10 months stale and was scored on the leaked validation split, not the private test set. Meta+HF themselves shipped GAIA2 as an explicit successor for dynamic, read/write agent environments (huggingface.co/datasets/meta-agents-research-environments/gaia2), tacitly retiring v1. Circulating public numbers range 44.8%-92%+ across trackers (official HF leaderboard vs HAL vs third-party snapshots) with no reconciled canonical source, and none independently sandboxed on the private test set.
 

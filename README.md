@@ -76,7 +76,7 @@ Other commands: `list [--cat CATEGORY] [--verdict canon|caveat|cut]` shows the r
 - `cut`: do not cite it. 4 rows.
 - `canon`: cite it plain. No benchmark has earned it in this edition, so there are 0 rows.
 
-The caveat is a one-line summary of the findings that matter most. The evidence file named in the `evidence:` line holds the full findings, with links, under five headings: who funds it, how it is graded, whether it still separates models, whether anyone has gamed it, and whether it is still maintained. Read it before you rely on a verdict. [METHOD.md](METHOD.md) lists the questions asked under each heading.
+The caveat is a one-line summary of the findings that matter most. The evidence file named in the `evidence:` line holds the full findings, with links, under headings for five questions: who funds it, how it is graded, whether it still separates models, whether anyone has gamed it, and whether it is still maintained. Some files answer two questions under one heading or leave one out: `evidence/swe-bench-pro.md` answers grading and gaming together under Integrity, and `evidence/tau2-bench.md` has no heading on gaming. Read it before you rely on a verdict. [METHOD.md](METHOD.md) lists the questions asked under each heading.
 
 `re-check due` is the date after which the verdict should be looked at again; see "Re-check dates".
 
@@ -159,6 +159,9 @@ The first runs the unit tests: the shipped data, the three built files (a fresh 
 - `check` finds exact names and the listed aliases only. It does not find a benchmark described in other words, a misspelling, or a name split across two lines.
 - Short aliases such as `HAL` and `ECI` are matched as whole words, so they also hit those letters when a draft uses them for something else. Read each hit before you act on it.
 - The files `build --out DIR` writes link to `evidence/` and `memos/` inside DIR, so those links open only when DIR is the repository folder (the default) or holds copies of both folders.
+- `stale` compares the re-check dates with the computer's date, so its list grows as time passes, and it exits 1 once any row is past due. Six of the 52 shipped rows fall due on 2026-10-17 and the other 46 on 2027-01-17. Give `--today YYYY-MM-DD` to check against another date.
+- `list --cat` with a category name that does not exist prints `0 benchmarks` and exits 0, so a misspelled category looks like an empty one. `list` without `--cat` shows the category of every row.
+- `check -` reads standard input in the encoding of your locale, while files are read as UTF-8. Under a locale that is not UTF-8, pass the file name instead.
 
 ## License
 
